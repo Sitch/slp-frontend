@@ -1,2 +1,2 @@
-Seer Frontend
+#SLP Frontend
 ===============

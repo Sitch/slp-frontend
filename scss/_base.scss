@@ -1,0 +1,22 @@
+
+@import "compass";
+@import "compass/css3";
+@import "compass/css3/font-face";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+@import "../components/normalize.scss/normalize";
+@import "../components/twitter-bootstrap-sass/vendor/assets/stylesheets/bootstrap";
+// @import "../components/twitter-bootstrap-sass/vendor/assets/stylesheets/bootstrap-responsive";
+@import "../components/flat-ui/sass/flat-ui";
+
+
+
+
+$base_path: "/SeerFrontend/public";
+
+// Global compass settings
+$support-for-original-webkit-gradients: false;
+$legacy-support-for-ie: false;
+$legacy-support-for-mozilla : false;

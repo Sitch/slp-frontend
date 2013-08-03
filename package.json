@@ -1,0 +1,13 @@
+{
+	"name": "Seer",
+	"version": "1.0.0",
+	"author": "Sitch",
+	"dependencies": {
+		"grunt": "*",
+		"grunt-bower": "*",
+		"grunt-compass": "*",
+		"grunt-contrib": "*",
+		"grunt-contrib-handlebars": "*",
+		"grunt-requirejs": "*"
+	}
+}

@@ -1,0 +1,17 @@
+{{name}} {{type}}
+
+<ol class="accounts">
+{{#each this}}
+  {{#if showInAccounts}}
+  <li>
+    <a href="{{href}}" data-id="{{id}}" class="account {{type}}">
+      {{#if extraIcon}}
+        <i class="{{extraIcon}} pull-right"></i>
+      {{/if}}
+      <i class="{{icon}}"></i>
+      {{displayText}}
+    </a>
+  </li>
+  {{/if}}
+{{/each}}
+</ol>

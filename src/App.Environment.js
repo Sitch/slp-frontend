@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'cookie'], function ($, _, cookie) {
+define(['jquery', 'underscore', 'jquery.cookie'], function ($, _, cookie) {
 	'use strict';
 
 	var env = {

@@ -10,9 +10,11 @@
 			'jquery-ui': '../public/components/jquery-ui/ui/jquery-ui',
 			'jquery-tmpl': '../public/components/jquery-tmpl/jquery.tmpl',
 			'jquery.sticky': '../public/components/jquery.sticky/jquery.sticky',
+			'jquery.cookie': '../public/components/jquery.cookie/jquery.cookie',
 			// 'jquery-easing': '../public/components/jquery-easing/jquery.easing',
 			underscore: '../public/components/lodash/lodash',
 			// stringUtils: '../public/components/underscore.string/underscore.string',
+			// moment: '../public/components/moment/moment',
 			backbone: '../public/components/backbone/backbone',
 			marionette: '../public/components/marionette/lib/backbone.marionette',
 			handlebars: '../public/components/handlebars/handlebars',
@@ -20,9 +22,6 @@
 			debug: '../public/libs/javascript-debug-master/ba-debug',
 			// d3: '../public/components/d3/d3',
 
-			cookie: '../public/components/jquery.cookie/jquery.cookie',
-
-			// alpaca: '../public/components/alpaca/alpaca',
 			alpaca: '../public/libs/alpaca/alpaca.min',
 
 			// Shims
@@ -54,7 +53,7 @@
 				deps: ['jquery', 'underscore', 'backbone'],
 				exports: 'Marionette'
 			},
-			cookie: {
+			'jquery.cookie': {
 				deps: ['jquery']
 			}
 			// alpaca: {

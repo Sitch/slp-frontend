@@ -30,7 +30,7 @@
 			// Internal
 			error: './Shared/Utils/ErrorInstance',
 
-			// User Libraries
+			// Locale
 			locale: './Locale/Locale.ENG'
 
 		},

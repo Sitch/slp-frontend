@@ -6,13 +6,16 @@ define(function (require) {
 	var AccountModel = require('./Model.Account');
 
 	var AccountCollection = CacheableCollection.extend({
+		model: AccountModel,
 		urlRead: function () {
-			return '/api/account';
+			return ['/api', App.userId, 'accounts'].join('/');
 		},
 		initialize: function () {
 			this.register('accounts');
 		},
-		model: AccountModel
+		parse: function (accounts) {
+			return accounts;
+		}
 	});
 	return AccountCollection;
 });

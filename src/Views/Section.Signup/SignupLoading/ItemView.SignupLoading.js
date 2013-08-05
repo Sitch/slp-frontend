@@ -7,10 +7,10 @@ define(function (require) {
 	var Marionette = require('marionette');
 	var Template = require('templates');
 
-	var Footer = Backbone.Marionette.ItemView.extend({
+	var SignupLoading = Backbone.Marionette.ItemView.extend({
 		tagName: 'div',
-		className: 'grey-bg full-width clearfix',
-		template: Template.Footer
+		className: 'loading',
+		template: Template.SignupLoading
 	});
-	return Footer;
+	return SignupLoading;
 });

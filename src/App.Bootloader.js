@@ -6,49 +6,29 @@
 		paths: {
 
 			// Core Libraries
-			jquery: '../components/jquery/jquery',
-			underscore: '../components/lodash/lodash',
-			backbone: '../components/backbone/backbone',
-			marionette: '../components/marionette/lib/backbone.marionette',
-			handlebars: '../components/handlebars/handlebars',
-			text: '../components/requirejs-text/text',
-			debug: '../libs/javascript-debug-master/ba-debug',
-			// d3: '../components/d3/d3',
+			jquery: '../public/components/jquery/jquery',
+			'jquery-ui': '../public/components/jquery-ui/ui/jquery-ui',
+			'jquery-tmpl': '../public/components/jquery-tmpl/jquery.tmpl',
+			// 'jquery-easing': '../public/components/jquery-easing/jquery.easing',
+			underscore: '../public/components/lodash/lodash',
+			backbone: '../public/components/backbone/backbone',
+			marionette: '../public/components/marionette/lib/backbone.marionette',
+			handlebars: '../public/components/handlebars/handlebars',
+			text: '../public/components/requirejs-text/text',
+			debug: '../public/libs/javascript-debug-master/ba-debug',
+			// d3: '../public/components/d3/d3',
 
-			// backboneInclude: '../components/backbone.include/backbone.include.min',
-			// backboneChoosen: '../components/backbone.chosen/backbone.chosen.min',
+			cookie: '../public/components/jquery.cookie/jquery.cookie',
 
-			// jQuery-ui
-			// 'jqueryui/accordion': '../components/jquery-ui/ui/jquery.ui.accordion',
-			// 'jqueryui/autocomplete': '../components/jquery-ui/ui/jquery.ui.autocomplete',
-			// 'jqueryui/button': '../components/jquery-ui/ui/jquery.ui.button',
-			// 'jqueryui/core': '../components/jquery-ui/ui/jquery.ui.core',
-			// 'jqueryui/datepicker': '../components/jquery-ui/ui/jquery.ui.datepicker',
-			// 'jqueryui/dialog': '../components/jquery-ui/ui/jquery.ui.dialog',
-			// 'jqueryui/draggable': '../components/jquery-ui/ui/jquery.ui.draggable',
-			// 'jqueryui/droppable': '../components/jquery-ui/ui/jquery.ui.droppable',
-			// 'jqueryui/mouse': '../components/jquery-ui/ui/jquery.ui.mouse',
-			// 'jqueryui/position': '../components/jquery-ui/ui/jquery.ui.position',
-			// 'jqueryui/progressbar': '../components/jquery-ui/ui/jquery.ui.progressbar',
-			// 'jqueryui/resizable': '../components/jquery-ui/ui/jquery.ui.resizable',
-			// 'jqueryui/selectable': '../components/jquery-ui/ui/jquery.ui.selectable',
-			// 'jqueryui/slider': '../components/jquery-ui/ui/jquery.ui.slider',
-			// 'jqueryui/sortable': '../components/jquery-ui/ui/jquery.ui.sortable',
-			// 'jqueryui/tabs': '../components/jquery-ui/ui/jquery.ui.tabs',
-			// 'jqueryui/widget': '../components/jquery-ui/ui/jquery.ui.widget',
-
-			cookie: '../components/jquery.cookie/jquery.cookie',
+			// alpaca: '../public/components/alpaca/alpaca',
+			alpaca: '../public/libs/alpaca/alpaca.min',
 
 			// Shims
-			// backboneShim: './Shared/Shims/Shim.Backbone',
 			marionetteShim: './Shared/Shims/Shim.Marionette',
 			hbars: './Shared/Shims/Shim.Handlebars',
 
 			// Internal
 			error: './Shared/Utils/ErrorInstance',
-			// dateUtils: './Shared/Utils/DateUtils',
-			// numberUtils: './Shared/Utils/NumberUtils',
-			// stringUtils: './Shared/Utils/StringUtils',
 
 			// User Libraries
 			locale: './Locale/Locale.ENG'
@@ -61,29 +41,29 @@
 			underscore: {
 				exports: '_'
 			},
-			marionette: {
-				deps: ['jquery', 'underscore', 'backbone'],
-				exports: 'Marionette'
+			handlebars: {
+				exports: 'Handlebars'
 			},
 			backbone: {
 				deps: ['underscore', 'jquery'],
 				exports: 'Backbone'
 			},
-			// backboneInclude: {
-			// 	deps: ['backbone']
-			// },
-			handlebars: {
-				exports: 'Handlebars'
+			marionette: {
+				deps: ['jquery', 'underscore', 'backbone'],
+				exports: 'Marionette'
 			},
+			cookie: {
+				deps: ['jquery']
+			}
+			// alpaca: {
+			// 	deps: ['jquery']
+			// },
 			// easing: {
 			// 	deps: ['jquery']
 			// },
 			// d3: {
 			// 	exports: 'd3'
 			// },
-			cookie: {
-				deps: ['jquery']
-			}
 		}
 	});
 
@@ -93,7 +73,7 @@
 		ENVIRONMENT = setEnvironment(environment, global);
 	});
 
-	require(['jquery', './App', './Shared/App.Erroring', /*'backboneInclude', /*'backboneChoosen',*/ 'marionetteShim'], function ($, App, Erroring) {
+	require(['jquery', './App', './Shared/App.Erroring', 'marionetteShim'], function ($, App, Erroring) {
 		$(function () {
 			try {
 				global.App = App;

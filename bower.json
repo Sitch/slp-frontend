@@ -1,0 +1,21 @@
+{
+  "name": "Student Lending Project",
+  "version": "0.0.1",
+  "dependencies": {
+    "requirejs": "latest",
+    "requirejs-text": "latest",
+    "jquery": "latest",
+    "jquery-ui": "latest",
+    "jquery-tmpl": "latest",
+    "jquery.cookie": "latest",
+    "jquery-easing": "latest",
+    "jquery.sticky": "latest",
+    "lodash": "latest",
+    "backbone": "latest",
+    "backbone.syphon": "latest",
+    "marionette": "latest",
+    "handlebars": "latest",
+    "d3": "latest",
+    "normalize.scss": "latest"
+  }
+}

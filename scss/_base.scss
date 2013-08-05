@@ -7,14 +7,14 @@
 @import "compass/css3/transform";
 
 @import "../components/normalize.scss/normalize";
-@import "../components/twitter-bootstrap-sass/vendor/assets/stylesheets/bootstrap";
+// @import "../components/twitter-bootstrap-sass/vendor/assets/stylesheets/bootstrap";
 // @import "../components/twitter-bootstrap-sass/vendor/assets/stylesheets/bootstrap-responsive";
-@import "../components/flat-ui/sass/flat-ui";
+// @import "../components/flat-ui/sass/flat-ui";
 
 
 
 
-$base_path: "/SeerFrontend/public";
+$base_path: "/slp-frontend/public";
 
 // Global compass settings
 $support-for-original-webkit-gradients: false;

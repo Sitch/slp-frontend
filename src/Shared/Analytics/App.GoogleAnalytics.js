@@ -7,9 +7,9 @@ define(function (require){
 
 	// Handle Google Analytics Tracking
 	function GoogleAnalytics (options){
-		this.gaq = options.environment.ga.gaq;
-		this.ga_enabled = options.environment.ga.enabled;
-		this.accountId = options.environment.ga.accountId;
+		this.gaq = options.gaq;
+		this.ga_enabled = options.enabled;
+		this.accountId = options.accountId;
 
 		if(this.ga_enabled){
 			if (!_.isArray(this.gaq)) {

@@ -7,18 +7,18 @@ define(function (require) {
 	var Marionette = require('marionette');
 
 	// var Accounts = require('./Routes/Routes.Accounts');
-	var browse = require('./Routes/Route.Browse');
+	var dashboard = require('./Routes/Route.Dashboard');
 	var errors = require('./Routes/Route.Errors');
 	// var People = require('./Routes/Route.People');
 	// var tasks = require('./Routes/Route.Tasks');
-	var priorities = require('./Routes/Route.Priorities');
+	var signup = require('./Routes/Route.Signup');
 
 	// Map the Sections resources:
 	// 1) View Constructor
 	// 2) Trigger name
 	// 3) Subnav button id
 	// var resourceMap = _.extend({}, Accounts.resources, Browse.resources, Errors.resources, People.resources, Tasks.resources);
-	var resourceMap = _.extend({}, browse.resources, errors.resources, priorities.resources);
+	var resourceMap = _.extend({}, dashboard.resources, signup.resources, errors.resources);
 
 	// Section Model manages the state of the subnav section
 	var sectionModel = new Backbone.Model();
@@ -46,10 +46,10 @@ define(function (require) {
 			// Default
 			'': 'defaultRoute'
 
-		}, browse.routes, priorities.routes, errors.routes),
+		}, dashboard.routes, signup.routes, errors.routes),
 		controller: _.extend({
 			defaultRoute: function () {
-				App.Router.navigate('priorities', {
+				App.Router.navigate('dashboard', {
 					trigger: true
 				});
 			},
@@ -86,6 +86,6 @@ define(function (require) {
 			trackPageView: function (page) {
 
 			}
-		}, browse.controller, errors.controller, priorities.controller)
+		}, dashboard.controller, signup.controller, errors.controller)
 	});
 });

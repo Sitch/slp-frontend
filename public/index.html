@@ -1,38 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
-      <title>Seer</title>
-      <link rel="shortcut icon" href="public/favicon.ico" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-      <link rel="stylesheet" href="public/css/application-styles.css">
+        <!-- TITLE -->
+        <title>Student Loan Project</title>
+        <meta name="description" content="Meta search engine for student loan refinancing.">
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="Sitch">
 
-      <!--[if IE 7]><link rel="stylesheet" href="/css/font-awesome-more-ie7.css"><![endif]-->
+        <!-- Favicon -->
+        <!-- <link rel="icon" type="image/x-ico" href="favicon.ico"> -->
+        <link rel="shortcut icon" href="public/favicon.ico" />
 
-      <!--
-      <link rel="stylesheet" href="public/css/screen.css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/slp-website/public/css/screen.css">
 
 
-      <script type="text/javascript" src="///fast.fonts.com/jsapi/84f0d99d-8594-42b1-9596-b7628626cd39.js"></script>
-      
-      -->
+        <!-- <link rel="stylesheet" href="public/css/screen.css"> -->
+        
+        <!-- Typekit Fonts 
+        <script type="text/javascript" src="js/typekit.js"></script> 
+        <script type="text/javascript" src="//use.typekit.net/jif0mdr.js"></script> 
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
+        -->
 
-      <script data-main="src/App.Bootloader.js" src="components/requirejs/require.js"></script>
+
+        <!-- SEO -->
+        <meta name="keywords" content="student loan refinancing">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="http://cdn.studentlendingproject.com/js/jquery.sticky.js"></script>
+
+        <script data-main="../src/App.Bootloader.js" src="components/requirejs/require.js"></script>
    </head>
    <body>
-      <header id="navigation"></header>
-      <div id="main" class="container-fluid"></div>
-      
+      <div id="header"></div>
+      <!-- <div id="main"> -->
+         <!-- <div id="sidebar"></div> -->
+      <div id="content"></div>
+      <!-- </div> -->
       <div id="modal"></div>
       <div id="notification"></div>
-
-      <footer>
-         <ol class="unstyled pull-right">
-            <li><a href="https://twitter.com/getseer" target="_blank">Twitter</a></li>
-            <li><a href="https://www.facebook.com/getseer" target="_blank">Facebook</a></li>
-            <li><a href="https://angel.co/seer-2" target="_blank">Angel</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-         </ol>
-         <p class="credit">Seer, Inc. Made in NYC</p>
-      </footer>
+      <div id="footer"></div>
    </body>
 </html>

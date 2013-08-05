@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 		},
 		'bower': {
 			dev: {
-				dest: 'components/'
+				dest: 'public/components/'
 			}
 		},
 		'compass': {

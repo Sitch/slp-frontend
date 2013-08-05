@@ -197,9 +197,10 @@ define(function (require) {
 			if (resource.queryParams) {
 				resource.setQueryParams(params || {});
 			}
+
 			resource.serverRead({
-				success: success || this._noop,
-				error: error || this._noop
+				success: success || Constructor.prototype.readSuccess || this._noop,
+				error: error || Constructor.prototype.readError || this._noop
 			});
 			return resource;
 		}

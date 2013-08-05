@@ -14,8 +14,7 @@ define(function (require) {
 	var Router = require('./App.Router');
 
 	// Views
-	var Navigation = require('./Views/Navigation/ItemView.Navigation');
-	var Sidebar = require('./Views/Sidebar/CompositeView.Sidebar');
+	var Header = require('./Views/Header/ItemView.Header');
 	var Footer = require('./Views/Footer/ItemView.Footer');
 
 	// Regions
@@ -29,7 +28,6 @@ define(function (require) {
 
 		// Main regions
 		header: '#header',
-		sidebar: '#sidebar',
 		content: '#content',
 		footer: '#footer',
 
@@ -38,10 +36,24 @@ define(function (require) {
 		notification: Notification
 	});
 
-	App.addInitializer(function (options) {
+	App.addInitializer(function (env) {
 
 		// Extend App with environment variables
-		// _.extend(App, options);
+		App.env = env;
+
+		// Add global event binder
+		_.extend(App, Backbone.Events);
+
+		App.Erroring = {};
+		App.Erroring.log = [];
+
+		App.on('error:ajaxReadFail', function (state) {
+			App.Erroring.log.push(state);
+			App.trigger('error:ajaxReadFail:render');
+			App.Router.navigate('ajaxReadFail', {
+				trigger: true
+			});
+		});
 
 		// Useful jQuery globals
 		App.$window = $(window);
@@ -49,29 +61,30 @@ define(function (require) {
 		App.$body = $('html, body');
 
 		// App Modules
-		App.Cache = new Cache(_.extend(options.environment.cache, cacheMap));
+		App.Cache = new Cache(_.extend(env.cache, cacheMap));
 
-		App.Analytics = new Analytics(options);
-		App.GoogleAnalytics = new GoogleAnalytics(options);
+		// App.Analytics = new Analytics(env);
+		App.GoogleAnalytics = new GoogleAnalytics(env.ga);
 
-		App.Router = new Router(options);
+		App.Router = new Router();
 
 		// Extend cache functionality to all views
 		Backbone.Marionette.View.prototype.cache = App.Cache;
 
 		// Fetch the prerequisite server resources
-		var user = App.Cache.get('user');
-		var accounts = App.Cache.get('accounts');
+		// var user = App.Cache.get('user');
+		// var accounts = App.Cache.get('accounts');
+		// var formData = App.Cache.get('formData');
+		// var formSchema = App.Cache.get('formSchema');
 
-		$.when(user.deferred, accounts.deferred).then(function () {
-			
-			// Show App Regions
-			App.header.show(new Navigation(options));
-			App.sidebar.show(new Sidebar(options));
-			App.footer.show(new Footer(options));
+		// $.when(user.deferred, accounts.deferred).then(function () {
 
-			Backbone.history.start();
-		});
+		// Show App Regions
+		App.header.show(new Header());
+		App.footer.show(new Footer());
+
+		Backbone.history.start();
+		// });
 	});
 	return App;
 });

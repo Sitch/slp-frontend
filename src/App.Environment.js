@@ -1,8 +1,8 @@
-define(['jquery', 'underscore', 'error', 'cookie'], function ($, _, ErrorInstance, cookie) {
+define(['jquery', 'underscore', 'cookie'], function ($, _, cookie) {
 	'use strict';
 
 	var env = {
-		trackingCode: "5e922eec333d2e03a593a8bd96860e70",
+
 		// AJAX Header
 		header: {
 			accept: 'application/json',
@@ -13,9 +13,10 @@ define(['jquery', 'underscore', 'error', 'cookie'], function ($, _, ErrorInstanc
 		serverRoot: '',
 		servicesBaseURI: 'api',
 		services: {
-			accounts: 'account',
-			entities: 'entities',
-			contacts: 'contacts',
+			account: 'account',
+			accounts: 'accounts',
+			formData: 'formData',
+			formSchema: 'form/schema',
 			user: 'user'
 		},
 		// Locale
@@ -60,6 +61,7 @@ define(['jquery', 'underscore', 'error', 'cookie'], function ($, _, ErrorInstanc
 	 */
 
 	return function (envOverride, global) {
+
 		// Extend override with Environment Settings
 		_.merge(env, envOverride);
 
@@ -74,7 +76,7 @@ define(['jquery', 'underscore', 'error', 'cookie'], function ($, _, ErrorInstanc
 
 		// Environment Setting Cookies
 		var cookie = {
-			debug: $.cookie('SITCHISAWESOME')
+			debug: $.cookie('slp-debug')
 		};
 
 		// AJAX
@@ -109,8 +111,6 @@ define(['jquery', 'underscore', 'error', 'cookie'], function ($, _, ErrorInstanc
 		// Goggle Analytics
 		env.ga.gaq = global._gaq = [];
 
-		return {
-			environment: env
-		};
+		return env;
 	};
 });

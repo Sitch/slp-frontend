@@ -15,9 +15,9 @@
 	function Analytics(options) {
 
 
-		_.extend(this, options.environment.analytics);
-		this.url = options.environment.services.analytics;
-		// this.multipleUrl = options.environment.services.analyticsBatch;
+		_.extend(this, options.ga);
+		this.url = options.services.analytics;
+		// this.multipleUrl = options.services.analyticsBatch;
 
 		this.initialTime = + new Date();
 		this.eventQueue = [];

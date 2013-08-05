@@ -17,6 +17,7 @@
     "handlebars": "latest",
     "d3": "latest",
     "normalize.scss": "latest",
-    "underscore.string": "~2.3.3"
+    "underscore.string": "~2.3.3",
+    "moment": "~2.1.0"
   }
 }

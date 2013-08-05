@@ -12,6 +12,7 @@
 			'jquery.sticky': '../public/components/jquery.sticky/jquery.sticky',
 			// 'jquery-easing': '../public/components/jquery-easing/jquery.easing',
 			underscore: '../public/components/lodash/lodash',
+			// stringUtils: '../public/components/underscore.string/underscore.string',
 			backbone: '../public/components/backbone/backbone',
 			marionette: '../public/components/marionette/lib/backbone.marionette',
 			handlebars: '../public/components/handlebars/handlebars',

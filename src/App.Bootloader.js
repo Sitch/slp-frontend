@@ -13,16 +13,15 @@
 			'jquery.cookie': '../public/components/jquery.cookie/jquery.cookie',
 			// 'jquery-easing': '../public/components/jquery-easing/jquery.easing',
 			underscore: '../public/components/lodash/lodash',
-			// stringUtils: '../public/components/underscore.string/underscore.string',
-			// moment: '../public/components/moment/moment',
+			handlebars: '../public/components/handlebars/handlebars',
 			backbone: '../public/components/backbone/backbone',
 			marionette: '../public/components/marionette/lib/backbone.marionette',
-			handlebars: '../public/components/handlebars/handlebars',
 			text: '../public/components/requirejs-text/text',
 			debug: '../public/libs/javascript-debug-master/ba-debug',
-			// d3: '../public/components/d3/d3',
-
 			alpaca: '../public/libs/alpaca/alpaca.min',
+			// d3: '../public/components/d3/d3',
+			// moment: '../public/components/moment/moment',
+			// 'underscore.string': '../public/components/underscore.string/underscore.string',
 
 			// Shims
 			marionetteShim: './Shared/Shims/Shim.Marionette',
@@ -70,7 +69,7 @@
 
 	// This needs to be outside the below require because it sets a require.config for urlArgs when cache is disabled
 	var ENVIRONMENT = {};
-	require(['./App.Environment', 'environment'], function (setEnvironment, environment) {
+	require(['./App.Environment', './Config/local'], function (setEnvironment, environment) {
 		ENVIRONMENT = setEnvironment(environment, global);
 	});
 

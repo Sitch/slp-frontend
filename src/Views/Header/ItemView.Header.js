@@ -6,6 +6,7 @@ define(function (require) {
 	var Backbone = require('backbone');
 	var Marionette = require('marionette');
 	var Template = require('templates');
+	var Sticky = require('jquery.sticky');
 
 	var Search = require('./Trait.Search');
 

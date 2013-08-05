@@ -11,11 +11,11 @@ module.exports = function (grunt) {
 			build: ['public/js/*', 'public/css/screen.min.css'],
 			sass: ['.sass-cache']
 		},
-		'bower': {
-			dev: {
-				dest: 'components/'
-			}
-		},
+		// 'bower': {
+		// 	dev: {
+		// 		dest: 'public/components/'
+		// 	}
+		// },
 		'compass': {
 			dev: {
 				config: 'config.rb',
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
 					findNestedDependencies: true,
 
 					paths: {
-						handlebars: "../components/handlebars/handlebars.runtime"
+						handlebars: "../public/components/handlebars/handlebars.runtime"
 						// ,
 						// templates: "public/js/templates"
 					}
@@ -63,11 +63,11 @@ module.exports = function (grunt) {
 			}
 		}
 	});
-	grunt.loadNpmTasks('grunt-bower');
+	// grunt.loadNpmTasks('grunt-bower');
 	grunt.loadNpmTasks('grunt-compass');
 	grunt.loadNpmTasks('grunt-contrib');
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
 	grunt.loadNpmTasks('grunt-requirejs');
 
-	grunt.registerTask('default', ['clean', 'compass:dev', 'cssmin', 'clean:sass', 'handlebars', 'requirejs']);
+	grunt.registerTask('build', ['clean', 'compass:dev', 'cssmin', 'clean:sass', 'handlebars', 'requirejs']);
 };

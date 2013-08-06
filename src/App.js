@@ -50,7 +50,7 @@ define(function (require) {
 		App.on('error:ajaxReadFail', function (state) {
 			App.Erroring.log.push(state);
 			App.trigger('error:ajaxReadFail:render');
-			App.Router.navigate('ajaxReadFail', {
+			App.Router.navigate('Error/Connecting', {
 				trigger: true
 			});
 		});

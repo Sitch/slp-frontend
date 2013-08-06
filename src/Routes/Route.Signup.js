@@ -12,8 +12,8 @@ define(function (require) {
 			}
 		},
 		routes: {
-			'signup': 'signup',
-			'signup/:id': 'signupBySection'
+			'Signup': 'signup',
+			'Signup/:id': 'signupBySection'
 		},
 		controller: {
 			signup: function (page) {

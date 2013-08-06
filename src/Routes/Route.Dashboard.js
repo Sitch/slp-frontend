@@ -12,8 +12,8 @@ define(function (require) {
 			}
 		},
 		routes: {
-			'dashboard': 'dashboard',
-			'dashboard/:section': 'dashboardBySection'
+			'Dashboard': 'dashboard',
+			'Dashboard/:section': 'dashboardBySection'
 		},
 		controller: {
 			dashboard: function (page) {

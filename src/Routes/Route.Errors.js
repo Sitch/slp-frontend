@@ -18,8 +18,8 @@ define(function (require) {
 			}
 		},
 		routes: {
-			'404': 'pageNotFound',
-			'ajaxReadFail': 'ajaxReadFail',
+			'Error/404': 'pageNotFound',
+			'Error/Connecting': 'ajaxReadFail',
 			'*path': 'invalidRoute'
 		},
 		controller: {
@@ -37,7 +37,7 @@ define(function (require) {
 				this.triggerRoute('ajaxReadFail');
 			},
 			invalidRoute: function () {
-				App.Router.navigate('404', {
+				App.Router.navigate('Error/404', {
 					trigger: true
 				});
 			}

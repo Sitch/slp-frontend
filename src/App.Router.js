@@ -49,7 +49,7 @@ define(function (require) {
 		}, dashboard.routes, signup.routes, errors.routes),
 		controller: _.extend({
 			defaultRoute: function () {
-				App.Router.navigate('dashboard', {
+				App.Router.navigate('Dashboard', {
 					trigger: true
 				});
 			},

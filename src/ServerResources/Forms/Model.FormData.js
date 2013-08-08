@@ -5,14 +5,12 @@ define(function (require) {
 	var CacheableModel = require('Shared/Cache/Model.Cacheable');
 
 	var FormDataModel = CacheableModel.extend({
-		urlRead: function () {
-			return ['/api/form', App.userId, 'data'].join('/');
+		url: function () {
+			// return ['/api/form', App.userId, 'data'].join('/');
+			return '../api/form/status';
 		},
 		initialize: function () {
 			this.register('formData');
-		},
-		parse: function (data) {
-			return data;
 		},
 		readError: function(){
 			App.trigger('error:ajaxReadFail', {

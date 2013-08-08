@@ -15,11 +15,12 @@
 			underscore: '../public/components/lodash/lodash',
 			handlebars: '../public/components/handlebars/handlebars',
 			backbone: '../public/components/backbone/backbone',
+			'backbone.syphon': '../public/components/backbone.syphon/lib/amd/backbone.syphon',
 			marionette: '../public/components/marionette/lib/backbone.marionette',
 			text: '../public/components/requirejs-text/text',
 			debug: '../public/libs/javascript-debug-master/ba-debug',
 			alpaca: '../public/libs/alpaca/alpaca.min',
-			// d3: '../public/components/d3/d3',
+			d3: '../public/components/d3/d3',
 			// moment: '../public/components/moment/moment',
 			// 'underscore.string': '../public/components/underscore.string/underscore.string',
 
@@ -54,6 +55,12 @@
 			},
 			'jquery.cookie': {
 				deps: ['jquery']
+			},
+			'jquery.sticky': {
+				deps: ['jquery']
+			},
+			d3: {
+				exports: 'd3'
 			}
 			// alpaca: {
 			// 	deps: ['jquery']

@@ -1,8 +1,8 @@
 define(function (require) {
 	'use strict';
 
-	var PathNotFound404View = require('../Views/Errors/ItemView.PathNotFound');
-	var AjaxReadErrorView = require('../Views/Errors/ItemView.AjaxReadError');
+	var PathNotFound404View = require('Views/Errors/ItemView.PathNotFound');
+	var AjaxReadErrorView = require('Views/Errors/ItemView.AjaxReadError');
 
 	return {
 		resources: {

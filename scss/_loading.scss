@@ -1,0 +1,12 @@
+img.loading {
+    display:none;
+}
+div.loading {
+    width: 100%;
+    min-height: 400px;
+    // background: url('/wp-content/uploads/images/loader.gif') center center no-repeat;
+
+    @media #{$media-tablet} {
+    	min-height: 200px;
+    }
+}

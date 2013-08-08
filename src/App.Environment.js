@@ -76,8 +76,10 @@ define(['jquery', 'underscore', 'jquery.cookie'], function ($, _, cookie) {
 
 		// Environment Setting Cookies
 		var cookie = {
-			debug: $.cookie('slp-debug')
+			debug: $.cookie('slp-debug'),
+			session: $.cookie('slp-session')
 		};
+		env.session = cookie.session;
 
 		// AJAX
 		$.ajaxSetup({

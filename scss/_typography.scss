@@ -1,1 +1,46 @@
 // @import "../components/font-awesome/scss/font-awesome";
+
+body {
+    font-family: 'proxima-nova';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 22px;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 100;
+    letter-spacing: 7px;
+    line-height: 46px;
+    margin-bottom: 10px;
+
+    @media #{$media-tablet} {
+        font-size: 20px;
+        letter-spacing: 5px;
+        line-height: 29px;
+    }
+}
+
+h2 {
+    font-size: 19px;
+    font-weight: 100;
+    letter-spacing: 7px;
+    line-height: 27px;
+}
+
+h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+

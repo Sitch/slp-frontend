@@ -1,0 +1,75 @@
+
+// COLORS
+$orange: #e33b00;
+$grey: #6e7982;
+$medium-grey: #3f3f3f;
+$light-grey: #85929D;
+$black: #2f3943;
+
+@mixin colorTheme($bg, $font) {
+  color: $font;
+  background-color: $bg;
+}
+
+body {
+    color: $grey;
+
+    @media #{$media-tablet} {
+      color: $medium-grey;
+    }
+}
+
+// Strokes
+
+.yellow-stroke {
+    color: #E3EC75;
+}
+
+// Backgrounds
+.light-silver-bg {
+    background-color: #ebebeb;
+}
+.orange-bg {
+    background-color: #e33b00;
+}
+.light-grey-bg {
+    color: #fff;
+    background-color: #85929D;
+}
+.dark-grey-bg {
+    color: #fff;
+    background-color: #2f3943;
+}
+.black-bg {
+    color: #fff;
+    background-color: #2f3943;
+}
+.orange-text{
+    color: #e33b00;
+}
+.blue-bg{
+    color: #DFE0CE;
+    background-color: #347AB4;;
+}
+.green-bg {
+    background-color: #2E6C72;
+}
+
+.grey-bg {
+    color: #fff;
+    background-color: #6e7982;
+
+    p {
+        font-weight: 100;
+        margin-bottom: 0px;
+        color: #fff;
+        letter-spacing: 2px;
+        font-size: 12px;
+    }
+
+    h1, h2, h3 {
+        text-transform: uppercase;
+    }
+
+}
+

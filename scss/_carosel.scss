@@ -1,0 +1,86 @@
+
+.carousel {
+    margin-bottom: 0;
+}
+.carousel-control.left {
+    left: 0px;
+}
+.carousel-control.right {
+    right: 0px;
+}
+.carousel-control.right,
+.carousel-control.left {
+    -moz-outline-style: none;
+    outline:none;
+    border-radius: 0;
+    border: 0 none;
+    width: 10px;
+    background-color: transparent;
+    opacity: 0.9;
+    margin-top: 0px;
+    color: #fff;
+    font-size: 30px;
+    display:block;
+    padding: 0 35px;
+    height: 100%;
+    top: 0;
+}
+.carousel-control .arrow {
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+}
+.carousel-control.right .arrow {
+    left: 35px;
+}
+.carousel-control.left .arrow {
+    right: 35px;
+}
+
+.carousel-control.hide {
+    display: none !important;
+}
+
+.carousel-control.swipe-right {
+    -moz-outline-style: none;
+    outline:none;
+    border-radius: 0;
+    border: 0 none;
+    background-color: transparent;
+    opacity: 0.9;
+    color: #fff;
+    display:block;
+    top: auto;
+    bottom: 15px;
+    left: auto;
+    right: auto;
+    height: 16px;
+    right: 15px;
+    line-height: 1em;
+    font-size: 1em;
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out; 
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}

@@ -18,6 +18,9 @@
     "d3": "latest",
     "normalize.scss": "latest",
     "underscore.string": "~2.3.3",
-    "moment": "~2.1.0"
+    "moment": "~2.1.0",
+    "socket.io-client": "~0.9.16",
+    "fancyInput": "~1.2.0",
+    "chosen": "~1.0.0"
   }
 }

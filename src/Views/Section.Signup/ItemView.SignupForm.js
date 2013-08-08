@@ -11,72 +11,20 @@ define(function (require) {
 
 	var SignupFormView = Backbone.Marionette.ItemView.extend({
 		template: Template.SignupForm,
-		// events: {
-
-		// },
-		// tagName: 'div',
-		// className: 'row', 
 		initialize: function (options) {
 			this.formData = this.cache.get('formData');
 			this.formSchema = this.cache.get('formSchema');
 		},
-		// templateHelpers: function () {
-		// 	return {
-		// 		// name: name,
-		// 	};
-		// },
-		onShow: function () {
-
-			// $("#signup-form").alpaca({
-			// 	"view": "VIEW_JQUERYUI_CREATE",
-			// 	"schema": {
-			// 		"type": "object",
-			// 		"properties": {
-			// 			"name": {
-			// 				"type": "string",
-			// 				"required": true
-			// 			},
-			// 			"birthday": {
-			// 				"type": "text",
-			// 				"format": "date",
-			// 				"required": true
-			// 			},
-			// 			"preference": {
-			// 				"type": "text",
-			// 				"enum": ["orlando", "tokyo", "amsterdam"],
-			// 				"default": "orlando",
-			// 				"required": true
-			// 			}
-			// 		}
-			// 	},
-			// 	"options": {
-			// 		"renderForm": true,
-			// 		"form": {
-			// 			"buttons": {
-			// 				"submit": {}
-			// 			}
-			// 		},
-			// 		"fields": {
-			// 			"name": {
-			// 				"label": "Your Name"
-			// 			},
-			// 			"birthday": {
-			// 				"label": "Your Birthday"
-			// 			},
-			// 			"preference": {
-			// 				"label": "Your Destination",
-			// 				"type": "select",
-			// 				"optionLabels": ["Orlando, USA", "Tokyo, Japan", "Amsterdam, Netherlands"]
-			// 			}
-			// 		}
-			// 	}
-			// });
-
-			$.alpaca(this.$("#signup-form"), {
-				data: this.formData.attributes,
-				schema: this.formSchema.attributes,
-				options: this.formOptions.attributes
+		displayForm: function () {
+			$.alpaca(this.$('.well'), {
+				view: 'VIEW_BOOTSTRAP_CREATE',
+				// data: this.formData.get('data'),
+				schema: this.formSchema.get('schema'),
+				options: this.formSchema.get('options')
 			});
+		},
+		onShow: function () {
+			this.displayForm();
 		}
 	});
 	return SignupFormView;

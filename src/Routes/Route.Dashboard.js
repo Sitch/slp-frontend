@@ -1,7 +1,7 @@
 define(function (require) {
 	'use strict';
 
-	var Dashboard = require('../Views/Section.Dashboard/Layout.Dashboard');
+	var Dashboard = require('Views/Section.Dashboard/Layout.Dashboard');
 
 	return {
 		resources: {

@@ -62,6 +62,17 @@ define(function (require) {
 			}
 			return resource;
 		},
+		prepare: function (name, params) {
+			var hash = this._generateHash(name, params);
+			var cached = this.enabled && this.cache.hasOwnProperty(hash);
+
+			var resource = cached ? this.cache[hash] : new this.constructorMap[name]();
+
+			if (!cached) {
+				this.cache[hash] = new CacheEntry(name, resource);
+			}
+			return resource;
+		},
 		/*
 		 * Flush
 		 */

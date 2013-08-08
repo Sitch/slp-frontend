@@ -1,91 +1,36 @@
-
-#header {
-	// position:fixed;
-	// top: 0px;
-	// left: 0px;
-	// bottom: 0px;
-	// height: 65px;
-
-	width: 100%;
-    height: 65px;
-    background: #222;
-
+.no-padding {
+    padding: 0 !important;
 }
 
-#main {
-	width: 100%;
-	height: 1200px;
-	background: #eee;
+.no-click {
+    cursor: default;
 }
 
-#sidebar {
-	width: 65px;
-	position: fixed;
-	top: 65px;
-	left: 0px;
-	bottom: 0px;
-	background: #555;
-	z-index: 1000;
-	overflow: hidden;
-	// box-shadow: 2px 0px 4px #000;
+.full-width {
+    width: 100%;
+    *zoom: 1;
 }
 
-// .navbar {
-// 	margin-bottom:0px;
-// }
-
-#content {
-	// top: 10px;
-	// right: 0px;
-	// bottom: 0px;
-	left: 65px;
-	// position: absolute;
-	position: fixed;
+.home-content {
+    position: relative;
+    z-index: 10;
 }
 
-
-
-
-
-
-
-
-
-
-
-// #featured-movies-wrapper {
-//     width: 100%;
-//     background: #ffffff;
-// }
- 
-// #content-wrapper {
-//     width: 100%;
-//     background: #efefef url(../img/content-bg.png) repeat-x 0 0;
-// }
- 
-// #blog-posts {
-//     position: relative;
-//     width: 500px;
-//     float: left;
-// }
- 
-// #side-bar {
-//     position: relative;
-//     width: 315px;
-//     float: right;
-// }
- 
-// #footer {
-//     width: 100%;
-//     background: #181818 url(../img/footer-bg.png) repeat-x 0 0;
-// }
- 
-// /* Center Pages */
-// .center-wrapper {
-//     position: relative;
-//     width: 870px;
-//     margin: 0 auto;
+// img.img-circle{
+// 	@include border-radius(500px);
 // }
 
 
-// Source: http://designmodo.com/create-website-day-1/#ixzz2XfBdxBz0
+
+// BLOCKS
+.small-block{
+	height: 60px;
+}
+
+.medium-block{
+	height: 88px;
+}
+
+.large-block{
+	height: 125px;
+}

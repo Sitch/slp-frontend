@@ -1,0 +1,133 @@
+#Contact {
+    position: relative;
+}
+
+footer {
+    font-size: 12px;
+    line-height: 1.45em;
+    letter-spacing: 0.125em;
+    padding: 60px 0;
+
+    a {
+        text-transform: uppercase;
+        cursor: pointer;
+        color: inherit;
+
+        &:hover, &:focus {
+            text-decoration: none;
+            color: #2F3943;
+        }
+    }
+
+    .grey-bg p {
+        margin-bottom: 20px;
+        font-weight: 100;
+        letter-spacing: 1px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    ul {
+        list-style: none outside none;
+        margin-left: -20px;
+        margin-bottom: 20px;
+    }
+
+    .tweets {
+
+    }
+    .item {
+        margin-bottom: 10px;
+    }
+    .item a {
+        text-transform: none;
+    }
+    .moment {
+        margin-top: 4px;
+
+        a {
+            display: block;
+            text-transform: uppercase;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    .black-letter {
+        color: #2f3943;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 400;
+    }
+    p.social-icons {
+        margin-top: 30px;
+        font-size: 18px;
+        letter-spacing: 0.25em;
+    }
+    .icon-twitter {
+        font-size: 90%;
+    }
+
+    .fixed-width {
+        min-width: 200px;
+    }
+    .nowrap {
+        white-space: nowrap;
+    }
+    .btn {
+        font-weight: 100;
+        font-family: proxima-nova;
+    }
+}
+
+
+
+
+@media (max-width: 767px) {
+    footer.container {
+        padding: 30px 0;
+        margin: 0 30px;
+    }
+    .newsletter .signup {
+        letter-spacing: 0;
+        width: 60%;
+    }
+}
+
+
+.newsletter {
+    margin-bottom: 20px;
+
+    .title {
+        margin-bottom: 5px;
+    }
+    .signup {
+        font-size: 12px;
+        padding: 10px 10px 9px 13px;
+        border-radius: 0;
+        letter-spacing: 2px;
+        width: 95%;
+    }
+}
+
+.newsletter-confirm {
+    padding: 20px 0;
+    margin-left: 0 !important;
+    
+}
+
+p.small-note {
+    text-indent: 0px;
+    margin-bottom: 0px;
+    line-height: 15px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #A8B4BF !important;
+    font-weight: 300;
+}
+.small-note a {
+    text-transform: none;
+}
+

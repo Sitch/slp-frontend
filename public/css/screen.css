@@ -1,1478 +1,740 @@
-/* normalize.css v2.1.2 | MIT License | git.io/normalize */
-/* normalize.scss v2.1.2 | MIT/GPLv2 License | bit.ly/normalize-with-compass */
-/* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined in IE 8/9.
- */
-/* line 55, ../components/normalize.scss/_normalize.scss */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block;
+/* line 3, ../../scss/_typography.scss */
+body {
+  font-family: 'proxima-nova';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 22px;
 }
 
-/**
- * Correct `inline-block` display not defined in IE 8/9.
- */
-/* line 74, ../components/normalize.scss/_normalize.scss */
-audio,
-canvas,
-video {
-  display: inline-block;
-  *display: inline;
+/* line 12, ../../scss/_typography.scss */
+h1 {
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 7px;
+  line-height: 46px;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 12, ../../scss/_typography.scss */
+  h1 {
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 29px;
+  }
+}
+
+/* line 26, ../../scss/_typography.scss */
+h2 {
+  font-size: 19px;
+  font-weight: 100;
+  letter-spacing: 7px;
+  line-height: 27px;
+}
+
+/* line 33, ../../scss/_typography.scss */
+h3 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* line 40, ../../scss/_typography.scss */
+h5 {
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* line 14, ../../scss/_palettes.scss */
+body {
+  color: #6e7982;
+}
+@media only screen and (max-width: 768px) {
+  /* line 14, ../../scss/_palettes.scss */
+  body {
+    color: #3f3f3f;
+  }
+}
+
+/* line 24, ../../scss/_palettes.scss */
+.yellow-stroke {
+  color: #E3EC75;
+}
+
+/* line 29, ../../scss/_palettes.scss */
+.light-silver-bg {
+  background-color: #ebebeb;
+}
+
+/* line 32, ../../scss/_palettes.scss */
+.orange-bg {
+  background-color: #e33b00;
+}
+
+/* line 35, ../../scss/_palettes.scss */
+.light-grey-bg {
+  color: #fff;
+  background-color: #85929D;
+}
+
+/* line 39, ../../scss/_palettes.scss */
+.dark-grey-bg {
+  color: #fff;
+  background-color: #2f3943;
+}
+
+/* line 43, ../../scss/_palettes.scss */
+.black-bg {
+  color: #fff;
+  background-color: #2f3943;
+}
+
+/* line 47, ../../scss/_palettes.scss */
+.orange-text {
+  color: #e33b00;
+}
+
+/* line 50, ../../scss/_palettes.scss */
+.blue-bg {
+  color: #DFE0CE;
+  background-color: #347AB4;
+}
+
+/* line 54, ../../scss/_palettes.scss */
+.green-bg {
+  background-color: #2E6C72;
+}
+
+/* line 58, ../../scss/_palettes.scss */
+.grey-bg {
+  color: #fff;
+  background-color: #6e7982;
+}
+/* line 62, ../../scss/_palettes.scss */
+.grey-bg p {
+  font-weight: 100;
+  margin-bottom: 0px;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+/* line 70, ../../scss/_palettes.scss */
+.grey-bg h1, .grey-bg h2, .grey-bg h3 {
+  text-transform: uppercase;
+}
+
+/* line 1, ../../scss/_layout.scss */
+.no-padding {
+  padding: 0 !important;
+}
+
+/* line 5, ../../scss/_layout.scss */
+.no-click {
+  cursor: default;
+}
+
+/* line 9, ../../scss/_layout.scss */
+.full-width {
+  width: 100%;
   *zoom: 1;
 }
 
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-/* line 89, ../components/normalize.scss/_normalize.scss */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Address styling not present in IE 8/9.
- */
-/* line 98, ../components/normalize.scss/_normalize.scss */
-[hidden] {
-  display: none;
-}
-
-/* ==========================================================================
-   Base
-   ========================================================================== */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- * 3. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
- *    `em` units.
- */
-/* line 114, ../components/normalize.scss/_normalize.scss */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  font-size: 100%;
-  /* 3 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/**
- * Address `font-family` inconsistency between `textarea` and other form
- * elements.
- */
-/* line 134, ../components/normalize.scss/_normalize.scss */
-button,
-input,
-select,
-textarea {
-  font-family: sans-serif;
-}
-
-/**
- * Remove default margin.
- */
-/* line 146, ../components/normalize.scss/_normalize.scss */
-body {
-  margin: 0;
-}
-
-/* ==========================================================================
-   Links
-   ========================================================================== */
-/**
- * Address `outline` inconsistency between Chrome and other browsers.
- */
-/* line 158, ../components/normalize.scss/_normalize.scss */
-a:focus {
-  outline: thin dotted;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-/* line 166, ../components/normalize.scss/_normalize.scss */
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-/**
- * Set 1 unit of vertical rhythm on the top and bottom margin.
- */
-/* line 180, ../components/normalize.scss/_normalize.scss */
-p,
-pre {
-  margin: 1.5em 0;
-}
-
-/* line 185, ../components/normalize.scss/_normalize.scss */
-blockquote {
-  /* Set 1 unit of vertical rhythm on the top and bottom margin. */
-  margin: 1.5em 40px;
-}
-
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-/* line 196, ../components/normalize.scss/_normalize.scss */
-h1 {
-  /* Set the font-size and line-height while keeping a proper vertical rhythm. */
-  font-size: 2em;
-  line-height: 1.5em;
-  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-}
-
-/* line 211, ../components/normalize.scss/_normalize.scss */
-h2 {
-  font-size: 1.5em;
-  line-height: 2em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-/* line 217, ../components/normalize.scss/_normalize.scss */
-h3 {
-  font-size: 1.17em;
-  line-height: 1.28205em;
-  margin-top: 1.28205em;
-  margin-bottom: 1.28205em;
-}
-
-/* line 223, ../components/normalize.scss/_normalize.scss */
-h4 {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
-
-/* line 229, ../components/normalize.scss/_normalize.scss */
-h5 {
-  font-size: 0.83em;
-  line-height: 1.80723em;
-  margin-top: 1.80723em;
-  margin-bottom: 1.80723em;
-}
-
-/* line 235, ../components/normalize.scss/_normalize.scss */
-h6 {
-  font-size: 0.67em;
-  line-height: 2.23881em;
-  margin-top: 2.23881em;
-  margin-bottom: 2.23881em;
-}
-
-/**
- * Address styling not present in IE 8/9, Safari 5, and Chrome.
- */
-/* line 246, ../components/normalize.scss/_normalize.scss */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
- */
-/* line 254, ../components/normalize.scss/_normalize.scss */
-b,
-strong {
-  font-weight: bold;
-}
-
-/**
- * Address styling not present in Safari 5 and Chrome.
- */
-/* line 263, ../components/normalize.scss/_normalize.scss */
-dfn {
-  font-style: italic;
-}
-
-/**
- * Address differences between Firefox and other browsers.
- */
-/* line 271, ../components/normalize.scss/_normalize.scss */
-hr {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/**
- * Address styling not present in IE 8/9.
- */
-/* line 280, ../components/normalize.scss/_normalize.scss */
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-/**
- * Correct font family set oddly in Safari 5 and Chrome.
- */
-/* line 289, ../components/normalize.scss/_normalize.scss */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  _font-family: "courier new", monospace;
-  font-size: 1em;
-}
-
-/**
- * Improve readability of pre-formatted text in all browsers.
- */
-/* line 309, ../components/normalize.scss/_normalize.scss */
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-/**
- * Set consistent quote types.
- */
-/* line 324, ../components/normalize.scss/_normalize.scss */
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-/* line 332, ../components/normalize.scss/_normalize.scss */
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-/* line 340, ../components/normalize.scss/_normalize.scss */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
+/* line 14, ../../scss/_layout.scss */
+.home-content {
   position: relative;
-  vertical-align: baseline;
+  z-index: 10;
 }
 
-/* line 348, ../components/normalize.scss/_normalize.scss */
-sup {
-  top: -0.5em;
+/* line 26, ../../scss/_layout.scss */
+.small-block {
+  height: 60px;
 }
 
-/* line 352, ../components/normalize.scss/_normalize.scss */
-sub {
-  bottom: -0.25em;
+/* line 30, ../../scss/_layout.scss */
+.medium-block {
+  height: 88px;
 }
 
-/* ==========================================================================
-   Lists
-   ========================================================================== */
-/**
- * Address margins set differently in IE 6/7.
- */
-/* line 365, ../components/normalize.scss/_normalize.scss */
-dl,
-menu,
-ol,
-ul {
-  margin: 1.5em 0;
+/* line 34, ../../scss/_layout.scss */
+.large-block {
+  height: 125px;
 }
 
-/* line 382, ../components/normalize.scss/_normalize.scss */
-dd {
-  margin: 0 0 0 40px;
+/* line 1, ../../scss/_loading.scss */
+img.loading {
+  display: none;
 }
 
-/**
- * Address paddings set differently in IE 6/7.
- */
-/* line 390, ../components/normalize.scss/_normalize.scss */
-menu,
-ol,
-ul {
-  padding: 0 0 0 40px;
+/* line 4, ../../scss/_loading.scss */
+div.loading {
+  width: 100%;
+  min-height: 400px;
+}
+@media only screen and (max-width: 768px) {
+  /* line 4, ../../scss/_loading.scss */
+  div.loading {
+    min-height: 200px;
+  }
 }
 
-/**
- * Correct list images handled incorrectly in IE 7.
- */
-/* line 402, ../components/normalize.scss/_normalize.scss */
-nav ul,
-nav ol {
-  list-style: none;
-  list-style-image: none;
+/* line 1, ../../scss/_navbar.scss */
+#navbar {
+  width: 100%;
 }
 
-/* ==========================================================================
-   Embedded content
-   ========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9.
- */
-/* line 417, ../components/normalize.scss/_normalize.scss */
-img {
-  border: 0;
-  /* Improve image quality when scaled in IE 7. */
-  -ms-interpolation-mode: bicubic;
+/* line 9, ../../scss/_navbar.scss */
+a {
+  color: #e33b00;
 }
 
-/**
- * Correct overflow displayed oddly in IE 9.
- */
-/* line 429, ../components/normalize.scss/_normalize.scss */
-svg:not(:root) {
-  overflow: hidden;
+/* line 13, ../../scss/_navbar.scss */
+a:hover,
+a:focus,
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  -moz-outline-style: none;
+  outline: none;
+  color: #E33B00;
 }
 
-/* ==========================================================================
-   Figures
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-/* line 441, ../components/normalize.scss/_normalize.scss */
-figure {
+/* line 23, ../../scss/_navbar.scss */
+.navbar {
   margin: 0;
 }
 
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-/**
- * Correct margin displayed oddly in IE 6/7.
- */
-/* line 454, ../components/normalize.scss/_normalize.scss */
-form {
+/* line 27, ../../scss/_navbar.scss */
+.navbar .nav > .active a:hover {
+  background-color: inherit;
+  box-shadow: none;
+  color: inherit;
+}
+
+/* line 32, ../../scss/_navbar.scss */
+.navbar .brand,
+.navbar-fixed-top .brand {
   margin: 0;
+  padding: 13px 0 17px 0;
+  line-height: 40px;
 }
 
-/**
- * Define consistent border, margin, and padding.
- */
-/* line 463, ../components/normalize.scss/_normalize.scss */
-fieldset {
-  margin: 0 2px;
-  /* Apply borders and padding that keep the vertical rhythm. */
-  border-color: #c0c0c0;
-  border-top-style: solid;
-  border-top-width: 0.0625em;
-  padding-top: 0.4625em;
-  border-bottom-style: solid;
-  border-bottom-width: 0.0625em;
-  padding-bottom: 0.9125em;
-  border-left-style: solid;
-  border-left-width: 0.0625em;
-  padding-left: 0.875em;
-  border-right-style: solid;
-  border-right-width: 0.0625em;
-  padding-right: 0.875em;
+/* line 39, ../../scss/_navbar.scss */
+.navbar .nav {
+  margin-right: 0;
 }
 
-/**
- * 1. Correct `color` not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- * 3. Correct alignment displayed oddly in IE 6/7.
- */
-/* line 479, ../components/normalize.scss/_normalize.scss */
-legend {
-  border: 0;
-  /* 1 */
+/* line 42, ../../scss/_navbar.scss */
+.navbar .nav li {
+  line-height: 40px;
+  width: 20%;
+}
+
+/* line 46, ../../scss/_navbar.scss */
+.navbar .nav > li > a,
+.client-list-nav a {
+  font-weight: 400;
+  font-size: 11px;
+  color: #6E7982;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 17px 0 13px 0;
+  text-shadow: none;
+}
+
+/* line 57, ../../scss/_navbar.scss */
+.navbar .brand,
+.navbar .nav > .active,
+.navbar .nav > .active > a {
+  color: #e33b00;
+  background-color: inherit;
+  box-shadow: none;
+}
+
+/* line 65, ../../scss/_navbar.scss */
+.navbar-inner {
+  background-image: none;
+  border: 0 none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #fff;
+  line-height: 40px;
   padding: 0;
-  /* 2 */
-  *margin-left: -7px;
-  /* 3 */
+  filter: none !important;
 }
 
-/**
- * 1. Correct font family not being inherited in all browsers.
- * 2. Correct font size not being inherited in all browsers.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- * 4. Improve appearance and consistency with IE 6/7.
- */
-/* line 494, ../components/normalize.scss/_normalize.scss */
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 2 */
-  margin: 0;
-  /* 3 */
-  vertical-align: baseline;
-  /* 4 */
-  *vertical-align: middle;
-  /* 4 */
+/* line 76, ../../scss/_navbar.scss */
+.navbar-inner .container-fluid {
+  padding: 0;
 }
 
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-/* line 512, ../components/normalize.scss/_normalize.scss */
-button,
-input {
-  line-height: normal;
+/* line 79, ../../scss/_navbar.scss */
+.navbar-shadow {
+  background-color: #fff;
+  position: relative;
+  padding: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
 }
 
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
- */
-/* line 524, ../components/normalize.scss/_normalize.scss */
-button,
-select {
+/* navbar fixed */
+/* line 89, ../../scss/_navbar.scss */
+.navbar-fixed-top {
+  position: fixed !important;
+}
+
+/* line 92, ../../scss/_navbar.scss */
+.navbar-inner.navbar-fixed-top {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  /* line 97, ../../scss/_navbar.scss */
+  .navbar .btn-navbar {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  /* line 103, ../../scss/_navbar.scss */
+  body {
+    padding: 0;
+  }
+
+  /* line 106, ../../scss/_navbar.scss */
+  .navbar-wrapper {
+    min-height: 52px;
+  }
+
+  /* line 109, ../../scss/_navbar.scss */
+  .navbar-fixed-top,
+  .navbar-fixed-bottom,
+  .navbar-static-top {
+    margin: 0;
+  }
+
+  /* line 114, ../../scss/_navbar.scss */
+  .navbar .btn-navbar {
+    margin-right: 30px;
+  }
+
+  /* line 117, ../../scss/_navbar.scss */
+  .navbar .brand,
+  .collapse .nav {
+    margin-left: 30px;
+  }
+
+  /* line 121, ../../scss/_navbar.scss */
+  .navbar-inner {
+    line-height: inherit;
+    height: auto;
+    padding: 0 !important;
+  }
+
+  /* line 126, ../../scss/_navbar.scss */
+  .navbar .brand {
+    line-height: 20px;
+  }
+
+  /* line 129, ../../scss/_navbar.scss */
+  .navbar .nav li {
+    line-height: 20px;
+  }
+
+  /* line 132, ../../scss/_navbar.scss */
+  .navbar .nav > li > a {
+    padding: 10px 15px;
+  }
+
+  /* line 135, ../../scss/_navbar.scss */
+  .navbar .btn-navbar,
+  .navbar-fixed-top .btn-navbar {
+    padding: 2px;
+    background: transparent url("../img/nav-collapse.png") no-repeat center;
+    border: 0 none;
+    box-shadow: none;
+    color: inherit;
+    text-shadow: none;
+    width: 25px;
+    height: 20px;
+  }
+
+  /* line 146, ../../scss/_navbar.scss */
+  .navbar .btn-navbar {
+    margin-top: 14px;
+  }
+
+  /* line 149, ../../scss/_navbar.scss */
+  .navbar .container {
+    padding: 0;
+  }
+}
+@media (max-width: 979px) {
+  /* line 155, ../../scss/_navbar.scss */
+  body {
+    padding-top: 0;
+  }
+}
+@media (min-width: 767px) and (max-width: 979px) {
+  /* line 161, ../../scss/_navbar.scss */
+  .collapse .nav {
+    margin-left: 100px;
+  }
+
+  /* line 164, ../../scss/_navbar.scss */
+  .navbar-fixed-top .container {
+    width: 724px;
+  }
+}
+/* line 1, ../../scss/_footer.scss */
+#Contact {
+  position: relative;
+}
+
+/* line 5, ../../scss/_footer.scss */
+footer {
+  font-size: 12px;
+  line-height: 1.45em;
+  letter-spacing: 0.125em;
+  padding: 60px 0;
+}
+/* line 11, ../../scss/_footer.scss */
+footer a {
+  text-transform: uppercase;
+  cursor: pointer;
+  color: inherit;
+}
+/* line 16, ../../scss/_footer.scss */
+footer a:hover, footer a:focus {
+  text-decoration: none;
+  color: #2F3943;
+}
+/* line 22, ../../scss/_footer.scss */
+footer .grey-bg p {
+  margin-bottom: 20px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 18px;
+}
+/* line 30, ../../scss/_footer.scss */
+footer ul {
+  list-style: none outside none;
+  margin-left: -20px;
+  margin-bottom: 20px;
+}
+/* line 39, ../../scss/_footer.scss */
+footer .item {
+  margin-bottom: 10px;
+}
+/* line 42, ../../scss/_footer.scss */
+footer .item a {
+  text-transform: none;
+}
+/* line 45, ../../scss/_footer.scss */
+footer .moment {
+  margin-top: 4px;
+}
+/* line 48, ../../scss/_footer.scss */
+footer .moment a {
+  display: block;
+  text-transform: uppercase;
+}
+/* line 52, ../../scss/_footer.scss */
+footer .moment a:hover {
+  color: #fff;
+}
+/* line 58, ../../scss/_footer.scss */
+footer .black-letter {
+  color: #2f3943;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 400;
+}
+/* line 64, ../../scss/_footer.scss */
+footer p.social-icons {
+  margin-top: 30px;
+  font-size: 18px;
+  letter-spacing: 0.25em;
+}
+/* line 69, ../../scss/_footer.scss */
+footer .icon-twitter {
+  font-size: 90%;
+}
+/* line 73, ../../scss/_footer.scss */
+footer .fixed-width {
+  min-width: 200px;
+}
+/* line 76, ../../scss/_footer.scss */
+footer .nowrap {
+  white-space: nowrap;
+}
+/* line 79, ../../scss/_footer.scss */
+footer .btn {
+  font-weight: 100;
+  font-family: proxima-nova;
+}
+
+@media (max-width: 767px) {
+  /* line 89, ../../scss/_footer.scss */
+  footer.container {
+    padding: 30px 0;
+    margin: 0 30px;
+  }
+
+  /* line 93, ../../scss/_footer.scss */
+  .newsletter .signup {
+    letter-spacing: 0;
+    width: 60%;
+  }
+}
+/* line 100, ../../scss/_footer.scss */
+.newsletter {
+  margin-bottom: 20px;
+}
+/* line 103, ../../scss/_footer.scss */
+.newsletter .title {
+  margin-bottom: 5px;
+}
+/* line 106, ../../scss/_footer.scss */
+.newsletter .signup {
+  font-size: 12px;
+  padding: 10px 10px 9px 13px;
+  border-radius: 0;
+  letter-spacing: 2px;
+  width: 95%;
+}
+
+/* line 115, ../../scss/_footer.scss */
+.newsletter-confirm {
+  padding: 20px 0;
+  margin-left: 0 !important;
+}
+
+/* line 121, ../../scss/_footer.scss */
+p.small-note {
+  text-indent: 0px;
+  margin-bottom: 0px;
+  line-height: 15px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #a8b4bf !important;
+  font-weight: 300;
+}
+
+/* line 130, ../../scss/_footer.scss */
+.small-note a {
   text-transform: none;
 }
 
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
- *    Known issue: inner spacing remains in IE 6.
- */
-/* line 539, ../components/normalize.scss/_normalize.scss */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-  *overflow: visible;
-  /* 4 */
+/* line 1, ../../scss/_login.scss */
+.pad-form {
+  padding: 60px;
 }
 
-/**
- * Re-set default cursor for disabled elements.
- */
-/* line 554, ../components/normalize.scss/_normalize.scss */
-button[disabled],
-html input[disabled] {
-  cursor: default;
+/* line 1, ../../scss/_charts.scss */
+svg {
+  font: 10px sans-serif;
 }
 
-/**
- * 1. Address box sizing set to `content-box` in IE 8/9.
- * 2. Remove excess padding in IE 8/9.
- * 3. Remove excess padding in IE 7.
- *    Known issue: excess padding remains in IE 6.
- */
-/* line 566, ../components/normalize.scss/_normalize.scss */
-input[type="checkbox"],
-input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-  *height: 13px;
-  /* 3 */
-  *width: 13px;
-  /* 3 */
+/* line 5, ../../scss/_charts.scss */
+path {
+  fill: steelblue;
 }
 
-/**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
-/* line 582, ../components/normalize.scss/_normalize.scss */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  /* 2 */
+/* line 9, ../../scss/_charts.scss */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }
 
-/**
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
-/* line 592, ../components/normalize.scss/_normalize.scss */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+/* line 16, ../../scss/_charts.scss */
+.brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
 }
 
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-/* line 601, ../components/normalize.scss/_normalize.scss */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/**
- * 1. Remove default vertical scrollbar in IE 8/9.
- * 2. Improve readability and alignment in all browsers.
- */
-/* line 612, ../components/normalize.scss/_normalize.scss */
-textarea {
-  overflow: auto;
-  /* 1 */
-  vertical-align: top;
-  /* 2 */
-}
-
-/* ==========================================================================
-   Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
-/* line 625, ../components/normalize.scss/_normalize.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 2, ../../scss/_layout.scss */
-#header {
-  width: 100%;
-  height: 65px;
-  background: #222;
-}
-
-/* line 15, ../../scss/_layout.scss */
-#main {
-  width: 100%;
-  height: 1200px;
-  background: #eee;
-}
-
-/* line 21, ../../scss/_layout.scss */
-#sidebar {
-  width: 65px;
-  position: fixed;
-  top: 65px;
-  left: 0px;
-  bottom: 0px;
-  background: #555;
-  z-index: 1000;
-  overflow: hidden;
-}
-
-/* line 37, ../../scss/_layout.scss */
-#content {
-  left: 65px;
-  position: fixed;
-}
-
-/*
-Alpaca Version 1.0.9
-
-Copyright 2013 Gitana Software, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License"); 
-you may not use this file except in compliance with the License. 
-
-You may obtain a copy of the License at 
-	http://www.apache.org/licenses/LICENSE-2.0 
-
-Unless required by applicable law or agreed to in writing, software 
-distributed under the License is distributed on an "AS IS" BASIS, 
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-See the License for the specific language governing permissions and 
-limitations under the License. 
-
-For more information, please contact Gitana Software, Inc. at this
-address:
-
-  info@gitanasoftware.com
-*/
-/**
- *  General
- */
-/* line 26, ../../scss/_alpaca.scss */
-.alpaca-hover {
-  background-color: #FFFFCC;
-}
-
-/* line 30, ../../scss/_alpaca.scss */
-.alpaca-clear {
-  clear: both;
-}
-
-/**
- *  Abstract Field
- */
-/**
- *  Control Field
- */
-/* line 58, ../../scss/_alpaca.scss */
-.alpaca-controlfield {
-  display: inline-block;
-  padding: 2px;
-  margin: 2px;
-}
-
-/* line 64, ../../scss/_alpaca.scss */
-.alpaca-controlfield * {
-  background: transparent;
-}
-
-/* line 69, ../../scss/_alpaca.scss */
-.alpaca-controlfield-container {
-  display: inline-block;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-/* line 75, ../../scss/_alpaca.scss */
-.alpaca-controlfield-label {
-  font-size: 1.0em;
-  font-weight: bold;
-  text-align: left;
-}
-
-/* line 81, ../../scss/_alpaca.scss */
-.alpaca-controlfield-helper {
-  font-size: 0.75em;
-  margin-top: 2px;
-}
-
-/* line 86, ../../scss/_alpaca.scss */
-.alpaca-controlfield-message {
-  font-size: 0.85em;
-}
-
-/* line 90, ../../scss/_alpaca.scss */
-.alpaca-controlfield-message-hidden {
-  display: none;
-}
-
-/* line 97, ../../scss/_alpaca.scss */
-.alpaca-field-required span.ui-icon-star {
-  float: left;
-  margin-right: 0.3em;
-}
-
-/* line 102, ../../scss/_alpaca.scss */
-.alpaca-controlfield-helper > span.ui-icon, .alpaca-controlfield-message > span.ui-icon {
-  float: left;
-  margin-right: .3em;
-}
-
-/**
- * Form Controls
- */
-/* line 110, ../../scss/_alpaca.scss */
-input, textarea, select {
-  border: 1px solid #555555;
-  padding: 2px;
-  font-size: 1em;
-  border-radius: 2px;
-  -khtml-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* line 123, ../../scss/_alpaca.scss */
-input[type="checkbox"], input[type="radio"] {
-  border: 0px;
-}
-
-/* line 127, ../../scss/_alpaca.scss */
-input[type="file"] {
-  border: none;
-  box-shadow: none;
-}
-
-/* line 132, ../../scss/_alpaca.scss */
-select {
-  min-width: 150px;
-}
-
-/* line 136, ../../scss/_alpaca.scss */
-input:focus, textarea:focus {
-  outline: none;
-  border: 1px solid #058cf5;
-}
-
-/* line 141, ../../scss/_alpaca.scss */
-.alpaca-field-readonly input, .alpaca-field-readonly textarea, input[readonly], textarea[readonly] {
-  background-color: #dcdcdc;
-  cursor: default;
-}
-
-/**
- * Text Field
- */
-/**
- * Date Field , Phone Field , Password Field and Email Field
- */
-/* line 158, ../../scss/_alpaca.scss */
-.alpaca-controlfield-date input {
-  background: url("./images/alpaca-icons.png") no-repeat right -5px;
-}
-
-/* line 165, ../../scss/_alpaca.scss */
-.alpaca-controlfield-phone input {
-  background: url("./images/alpaca-icons.png") no-repeat right -85px;
-}
-
-/* line 172, ../../scss/_alpaca.scss */
-.alpaca-controlfield-email input {
-  background: url("./images/alpaca-icons.png") no-repeat right -45px;
-}
-
-/* line 179, ../../scss/_alpaca.scss */
-.alpaca-controlfield-time input {
-  background: url("./images/alpaca-icons.png") no-repeat right -125px;
-}
-
-/* line 186, ../../scss/_alpaca.scss */
-.alpaca-controlfield-email > span.ui-icon, .alpaca-controlfield-date > span.ui-icon, .alpaca-controlfield-phone > span.ui-icon {
-  float: right;
-  margin-left: .3em;
-}
-
-/* line 191, ../../scss/_alpaca.scss */
-.alpaca-controlfield-helper .alpaca-controlfield-helper-text, .alpaca-controlfield-message .alpaca-controlfield-message-text, .alpaca-controlfield-email > input, .alpaca-controlfield-date > input, .alpaca-controlfield-phone > input {
-  line-height: 16px;
-}
-
-/**
-* Fix for jQuery datepicker initial state issue.
-*/
-/* line 198, ../../scss/_alpaca.scss */
-#ui-datepicker-div {
-  display: none;
-}
-
-/**
- * Address Map Field
- */
-/* line 205, ../../scss/_alpaca.scss */
-.alpaca-controlfield-address-mapcanvas {
-  height: 300px;
-  width: 300px;
-  margin: 10px;
-}
-
-/**
- * Checkbox Field
- */
-/* line 214, ../../scss/_alpaca.scss */
-.alpaca-controlfield-checkbox {
-  padding-top: 0.4em;
-}
-
-/* line 218, ../../scss/_alpaca.scss */
-.alpaca-controlfield-checkbox input {
-  margin-right: 1em;
-}
-
-/* IE < 8 */
-/* line 223, ../../scss/_alpaca.scss */
-.alpaca-controlfield-checkbox {
-  *padding-top: 0;
-}
-
-/**
- * Radio Field
- */
-/* line 230, ../../scss/_alpaca.scss */
-.alpaca-controlfield-radio {
-  padding-top: 0.5em;
-}
-
-/* line 234, ../../scss/_alpaca.scss */
-.alpaca-controlfield-radio input {
-  margin-right: 0.3em;
-}
-
-/* line 238, ../../scss/_alpaca.scss */
-.alpaca-controlfield-radio-label {
-  margin-right: 0.3em;
-}
-
-/**
- * Select Field
- */
-/**
- * Number Field
- */
-/**
- * Integer Field
- */
-/**
- * Textarea Field
- */
-/**
- * WYSIWYG Field
- */
-/**
- * Button Field
- */
-/**
- * File Field
- */
-/**
- * Editor Field
- */
-/* line 287, ../../scss/_alpaca.scss */
-.alpaca-controlfield-editor {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  border: 1px #cccccc solid;
-}
-
-/* line 295, ../../scss/_alpaca.scss */
-.alpaca-controlfield-editor .control-field-editor-el {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-/* line 304, ../../scss/_alpaca.scss */
-.alpaca-controlfield-file-custom-input {
-  position: absolute;
-  height: 100px;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  opacity: 0;
-  -moz-opacity: 0;
-  filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 0);
-  z-index: 999;
-}
-
-/* line 316, ../../scss/_alpaca.scss */
-.alpaca-controlfield-file-custom {
-  width: 350px;
-  cursor: pointer;
-  overflow: hidden;
-  padding: 2px;
-  position: relative;
-}
-
-/* line 324, ../../scss/_alpaca.scss */
-.alpaca-controlfield-file-custom-disabled {
-  opacity: .5;
-  filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 0);
-  cursor: default;
-}
-
-/* line 330, ../../scss/_alpaca.scss */
-.alpaca-controlfield-file-custom-feedback {
-  display: block;
-  margin: 1px 1px 1px 5px;
-  font-style: italic;
-  padding: 0.3em 0.6em;
-}
-
-/* line 337, ../../scss/_alpaca.scss */
-.alpaca-controlfield-file-custom-feedback-populated {
-  font-style: normal;
-  font-weight: bold;
-  padding-left: 20px;
-    /*
-	left 4px no-repeat;
-	*/
-}
-
-/**
- * Container Field (Fieldset)
- */
-/* line 349, ../../scss/_alpaca.scss */
-.alpaca-fieldset {
-    /*
-		display: inherit;
-	*/
-  padding: 4px;
-  margin: 4px;
-  overflow: auto;
-  position: relative;
-}
-
-/* line 359, ../../scss/_alpaca.scss */
-fieldset.alpaca-fieldset {
-  /*
-      display: inline-block;
-  */
-  margin: 0.5em 1em 1em 0px;
-}
-
-/* line 366, ../../scss/_alpaca.scss */
-legend.alpaca-fieldset-legend {
-  font-size: 1.1em;
-  text-align: left;
-  bottom: -1px;
-}
-
-/* line 372, ../../scss/_alpaca.scss */
-.alpaca-fieldset-legend {
-  font-size: 1.0em;
-  font-weight: bold;
-  text-align: left;
-}
-
-/* line 378, ../../scss/_alpaca.scss */
-.alpaca-fieldset-helper {
-  padding-top: 10px;
-  padding-bottom: 5px;
-  clear: both;
-}
-
-/* line 384, ../../scss/_alpaca.scss */
-.alpaca-fieldset-items-container {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  clear: both;
-}
-
-/* line 390, ../../scss/_alpaca.scss */
-.alpaca-fieldset-legend-link {
-  float: left;
-  margin-right: 0.3em;
-}
-
-/**
- * Array
- */
-/* line 398, ../../scss/_alpaca.scss */
-.alpaca-fieldset-array-item-toolbar {
-  padding: 1px;
-  margin: 0px 2px 0px 2px;
-  font-size: 0.75em;
-}
-
-/* line 404, ../../scss/_alpaca.scss */
-.alpaca-fieldset-array-toolbar {
-  padding: 10px 4px;
-}
-
-/* line 408, ../../scss/_alpaca.scss */
-.alpaca-fieldset-array-item-toolbar-disabled {
-  opacity: .5;
-}
-
-/* Fix for Chrome issue with Button text */
-/* line 425, ../../scss/_alpaca.scss */
-.ui-button .ui-button-text {
-  white-space: nowrap;
-}
-
-/**
- * Form
- */
-/* line 432, ../../scss/_alpaca.scss */
-.alpaca-form {
-  margin-top: 15px;
-  margin-left: 15px;
-}
-
-/**
- * Form Buttons
- */
-/* line 440, ../../scss/_alpaca.scss */
-.alpaca-form-buttons-container {
-  clear: both;
-  display: inline-block;
-  margin: 5px 0 5px 0;
-}
-
-/* line 458, ../../scss/_alpaca.scss */
-.alpaca-form-button-view-switcher {
-  position: absolute;
-  float: left;
-  font-size: 1em;
-  padding: 8px 3px 3px;
-  zIndex: 999999;
-}
-
-/* line 466, ../../scss/_alpaca.scss */
-.alpaca-form-button-view-switcher ul {
-  listStyle: none;
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-}
-
-/* line 473, ../../scss/_alpaca.scss */
-.alpaca-form-button-view-switcher ul li {
-  padding: 2px;
-  margin: 1px;
-  clear: left;
-  float: left;
-}
-
-/* line 480, ../../scss/_alpaca.scss */
-.alpaca-form-button-view-switcher ul li a {
-  text-decoration: none;
-}
-
-/* line 484, ../../scss/_alpaca.scss */
-.alpaca-form-buttons-container input {
-  margin-right: 4px;
-}
-
-/* line 488, ../../scss/_alpaca.scss */
-.alpaca-form-buttons-container input.alpaca-form-button:hover {
-  background: #FFFFCC;
-}
-
-/**
-* Display View
-*/
-/* line 495, ../../scss/_alpaca.scss */
-div.alpaca-fieldset {
-  display: block;
-  border: none;
-  margin: 1.5em 1em 1em 0px;
-}
-
-/* line 504, ../../scss/_alpaca.scss */
-.alpaca-data-container {
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
-  display: block;
-}
-
-/* line 510, ../../scss/_alpaca.scss */
-.alpaca-data {
-  text-align: left;
-  padding-left: 10px;
-}
-
-/* line 515, ../../scss/_alpaca.scss */
-.alpaca-data-label {
-  float: left;
-  min-width: 100px;
-  clear: both;
-  font-weight: bold;
-  display: inline-block;
-}
-
-/**
- * Wizard
- */
-/* line 526, ../../scss/_alpaca.scss */
-.alpaca-wizard-status-bar {
-  list-style: none;
-  overflow: hidden;
-  margin: 10px 0px 10px 0px;
-  padding: 0px;
-  counter-reset: step;
-  float: left;
-}
-
-/* line 535, ../../scss/_alpaca.scss */
-.alpaca-wizard-status-bar li {
-  float: left;
-}
-
-/* line 539, ../../scss/_alpaca.scss */
-.alpaca-wizard-status-bar li span {
-  display: block;
-  font-size: 1.2em;
-}
-
-/* line 544, ../../scss/_alpaca.scss */
-.alpaca-wizard-status-bar li div {
-  display: block;
-  position: relative;
-  padding: 2px 25px 2px 30px;
-}
-
-/* line 550, ../../scss/_alpaca.scss */
-.alpaca-wizard-status-bar li div:before {
-  font-size: 1em;
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  margin-top: -8px;
+/* MARKETING CONTENT
+-------------------------------------------------- */
+/* Center align the text within the three columns below the carousel */
+/* line 17, ../../scss/screen.scss */
+.marketing .span4 {
   text-align: center;
-  font-weight: bold;
-  padding: 2px 6px;
-  counter-increment: step;
-  content: counter(step);
 }
 
-/* line 563, ../../scss/_alpaca.scss */
-.alpaca-wizard-status-bar li div strong {
+/* line 20, ../../scss/screen.scss */
+.marketing h2 {
   font-weight: normal;
 }
 
-/* line 573, ../../scss/_alpaca.scss */
-.alpaca-wizard-title {
-  font-size: 1.2em;
-  margin: 0px;
-  padding: 10px 0px;
-  font-weight: bold;
+/* line 23, ../../scss/screen.scss */
+.marketing .span4 p {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-/* line 580, ../../scss/_alpaca.scss */
-.alpaca-wizard-desc {
-  font-size: 0.9em;
-  margin: 0px;
-  padding: 5px 0px;
+/* Featurettes
+------------------------- */
+/* line 32, ../../scss/screen.scss */
+.featurette-divider {
+  margin: 80px 0;
+  /* Space out the Bootstrap <hr> more */
 }
 
-/* line 586, ../../scss/_alpaca.scss */
-.alpaca-wizard-step-title {
-  font-size: 1em;
-  margin: 0px;
-  padding: 10px 0px;
-  text-decoration: underline;
-  font-weight: bold;
+/* line 35, ../../scss/screen.scss */
+.featurette {
+  padding-top: 120px;
+  /* Vertically center images part 1: add padding above and below text. */
+  overflow: visible;
 }
 
-/* line 594, ../../scss/_alpaca.scss */
-.alpaca-wizard-nav-bar {
-  clear: both;
-  float: right;
+/* line 50, ../../scss/screen.scss */
+.featurette-image {
+  margin-top: -120px;
+  /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
 }
 
-/**
- * Layout
- */
-/*
-.alpaca-layout-two-column-mask {
-    overflow: hidden;
-    width: 100%;
-	min-width: 1000px;
-	clear: both;
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+/* line 55, ../../scss/screen.scss */
+.featurette-image.pull-left {
+  margin-right: 40px;
 }
 
-.alpaca-layout-two-column-left {
-    float: left;
-	padding: 5px;
+/* line 58, ../../scss/screen.scss */
+.featurette-image.pull-right {
+  margin-left: 40px;
 }
 
-.alpaca-layout-two-column-right {
-    overflow: hidden;
-	padding: 5px;
-}
-*/
-/* line 633, ../../scss/_alpaca.scss */
-.alpaca-layout-two-column-mask {
-  overflow: auto;
-  width: 100%;
-  min-width: 600px;
-  display: inline-block;
+/* Thin out the marketing headings */
+/* line 63, ../../scss/screen.scss */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
 }
 
-/* line 640, ../../scss/_alpaca.scss */
-.alpaca-layout-two-column-left {
-  overflow: auto;
-  display: inline-block;
-  padding: 5px;
-  vertical-align: top;
-}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (max-width: 979px) {
+  /* line 77, ../../scss/screen.scss */
+  .container.navbar-wrapper {
+    margin-bottom: 0;
+    width: auto;
+  }
 
-/* line 647, ../../scss/_alpaca.scss */
-.alpaca-layout-two-column-right {
-  overflow: auto;
-  display: inline-block;
-  padding: 5px;
-  vertical-align: top;
-}
+  /* line 81, ../../scss/screen.scss */
+  .navbar-inner {
+    border-radius: 0;
+    margin: -20px 0;
+  }
 
-/* line 654, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-list {
-  border-left: none;
-  border-bottom: none;
-  border-right: none;
-  padding-right: 3em;
-}
+  /* line 86, ../../scss/screen.scss */
+  .carousel .item {
+    height: 500px;
+  }
 
-/* line 661, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-list.fieldset-collapsed {
-  border: solid 1px;
-}
+  /* line 89, ../../scss/screen.scss */
+  .carousel img {
+    width: auto;
+    height: 500px;
+  }
 
-/* line 665, ../../scss/_alpaca.scss */
-span.alpaca-view-web-edit-list .alpaca-controlfield-label {
-  width: 100px;
-  display: inline-block;
-  vertical-align: top;
-  padding-top: 0.5em;
-}
+  /* line 94, ../../scss/screen.scss */
+  .featurette {
+    height: auto;
+    padding: 0;
+  }
 
-/* line 672, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-list legend {
-  /* to make chrome not wrapping text */
-  font-size: 1.01em;
+  /* line 98, ../../scss/screen.scss */
+  .featurette-image.pull-left,
+  .featurette-image.pull-right {
+    display: block;
+    float: none;
+    max-width: 40%;
+    margin: 0 auto 20px;
+  }
 }
+@media (max-width: 767px) {
+  /* line 110, ../../scss/screen.scss */
+  .navbar-inner {
+    margin: -20px;
+  }
 
-/* line 677, ../../scss/_alpaca.scss */
-fieldset.alpaca-fieldset-no-legend {
-  border: none;
+  /* line 114, ../../scss/screen.scss */
+  .carousel {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  /* line 121, ../../scss/screen.scss */
+  .carousel .item {
+    height: 300px;
+  }
+
+  /* line 124, ../../scss/screen.scss */
+  .carousel img {
+    height: 300px;
+  }
+
+  /* line 127, ../../scss/screen.scss */
+  .carousel-caption {
+    width: 65%;
+    padding: 0 70px;
+    margin-top: 100px;
+  }
+
+  /* line 132, ../../scss/screen.scss */
+  .carousel-caption h1 {
+    font-size: 30px;
+  }
+
+  /* line 135, ../../scss/screen.scss */
+  .carousel-caption .lead,
+  .carousel-caption .btn {
+    font-size: 18px;
+  }
+
+  /* line 140, ../../scss/screen.scss */
+  .marketing .span4 + .span4 {
+    margin-top: 40px;
+  }
+
+  /* line 144, ../../scss/screen.scss */
+  .featurette-heading {
+    font-size: 30px;
+  }
+
+  /* line 147, ../../scss/screen.scss */
+  .featurette .lead {
+    font-size: 18px;
+    line-height: 1.5;
+  }
 }
-
-/* list view */
-/* line 681, ../../scss/_alpaca.scss */
-alpaca-controlfield-label-list-view {
-  width: 100px;
-  display: inline-block;
-  vertical-align: top;
-  padding-top: 0.5em;
-}
-
-/* line 688, ../../scss/_alpaca.scss */
-alpaca-fieldset-message-list-view {
-  float: left;
-  margin-right: .3em;
-}
-
-/* line 693, ../../scss/_alpaca.scss */
-alpaca-controlfield-item-label-list-view {
-  width: 100px;
-  display: inline-block;
-  vertical-align: top;
-  padding-top: 0.25em;
-}
-
-/* line 700, ../../scss/_alpaca.scss */
-ol.alpaca-fieldset-itemscontainer-list-view-top {
-  padding-left: 0;
-}
-
-/* line 704, ../../scss/_alpaca.scss */
-li.alpaca-fieldset-itemcontainer-list-view-top {
-  list-style: none;
-}
-
-/* JSON field */
-/* line 708, ../../scss/_alpaca.scss */
-.alpaca-controlfield .alpaca-controlfield-json textarea {
-  font-family: "Courier New";
-  font-size: 0.9em;
-  font-style: italic;
-}
-
-/* BEGIN styles for the view VIEW_WEB_EDIT_YAML */
-/* line 717, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml.alpaca-fieldset {
-  border: solid 1px;
-  border-radius: 5px;
-  margin: 1px 0 0 0;
-  padding-top: 4px;
-  padding-bottom: 2px;
-}
-
-/*hide the arrow icon before the fieldset name*/
-/* line 726, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml legend.alpaca-fieldset-legend span {
-  display: none;
-}
-
-/* make the fonts the right size */
-/* line 731, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml legend.alpaca-fieldset-legend {
-  font-size: 1em;
-}
-
-/* line 735, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml.fieldset-collapsed {
-  border: none;
-  margin: 1px 1px 1px 1px;
-}
-
-/* line 740, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml legend.alpaca-fieldset-legend.legend-expanded:after {
-  content: url("./images/down.png");
-  padding-left: 5px;
-}
-
-/* line 744, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml legend.alpaca-fieldset-legend.legend-collapsed:after {
-  content: url("./images/left.png");
-  padding-left: 5px;
-}
-
-/*sort out the text boxes so that they disappear when not focused */
-/* line 750, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml span:not(.alpaca-field-focused) div.alpaca-controlfield-text input {
+/* line 153, ../../scss/screen.scss */
+.carousel-control {
+  color: #85929d;
   background: none;
   border: none;
-  box-shadow: none;
-  margin-top: 2px;
-  margin-left: 2px;
-  margin-bottom: 2px;
-  margin-right: 2px;
 }
 
-/* line 760, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml {
-  font-family: courier;
-  padding-right: 1em;
-  padding-top: 0px;
+/* line 159, ../../scss/screen.scss */
+.carousel-caption {
+  text-align: center;
 }
 
-/* line 766, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml div.alpaca-controlfield-checkbox {
-  margin-top: 4px;
-  margin-bottom: 4px;
+/* line 163, ../../scss/screen.scss */
+.featurette-img-shadow {
+  -webkit-box-shadow: 1px 1px 10px #888888;
+  -moz-box-shadow: 1px 1px 10px #888888;
+  box-shadow: 1px 1px 10px #888888;
 }
 
-/* line 771, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml div.alpaca-controlfield-select {
-  margin-bottom: 1px;
+/* line 167, ../../scss/screen.scss */
+#landing {
+  overflow: hidden;
 }
-
-/* line 774, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml div.alpaca-controlfield-radio div.alpaca-controlfield-radio {
-  padding-top: 3px;
-  padding-bottom: 4px;
-}
-
-/* line 779, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml > input,
-fieldset.alpaca-view-web-edit-yaml > select,
-fieldset.alpaca-view-web-edit-yaml > label {
-  font-family: courier;
-}
-
-/* line 786, ../../scss/_alpaca.scss */
-span.alpaca-view-web-edit-yaml .alpaca-controlfield-label {
-  width: 175px;
-  padding-top: 3px;
-  padding-left: 3px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-/* line 794, ../../scss/_alpaca.scss */
-span.alpaca-view-web-edit-yaml div.alpaca-controlfield-container {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-/* line 799, ../../scss/_alpaca.scss */
-span.alpaca-view-web-edit-yaml div.alpaca-controlfield-container > input,
-span.alpaca-view-web-edit-yaml div.alpaca-controlfield-container > select {
-  padding: 1px 1px 1px 1px;
-}
-
-/* line 805, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml span.alpaca-field {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-/* line 812, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml ol.alpaca-fieldset-items-container {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-/* make the array item toolbar float, without displacing any other elements */
-/* line 821, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml div.alpaca-fieldset-array-item-toolbar {
-  position: absolute;
-  z-index: 99999;
-  right: 15px;
-}
-
-/* line 828, ../../scss/_alpaca.scss */
-fieldset.alpaca-view-web-edit-yaml .ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
-  padding: 2px;
-}
-
-/* END styles for the view VIEW_WEB_EDIT_YAML */
-/* BEGIN styles for the view VIEW_WEB_EDIT_INLINE */
-/* line 836, ../../scss/_alpaca.scss */
-.alpaca-inline .alpaca-inline-item-container {
-  float: left;
-}
-
-/* line 840, ../../scss/_alpaca.scss */
-.alpaca-inline-item-container .alpaca-inline .alpaca-fieldset, .alpaca-inline-item-container .alpaca-fieldset.alpaca-inline {
-  margin: 0 1.5em;
-  padding: 0;
-}
-
-/* line 845, ../../scss/_alpaca.scss */
-.alpaca-inline-item-container .alpaca-fieldset-array-item-toolbar {
-  width: 60px;
-  float: right;
-  margin-top: 0.7em;
-}
-
-/* line 851, ../../scss/_alpaca.scss */
-.alpaca-inline .alpaca-fieldset-items-container {
-  margin: 0em 1em;
-  padding: 0;
-}
-
-/* line 856, ../../scss/_alpaca.scss */
-.alpaca-inline select {
-  min-width: 0px;
-}
-
-/* END styles for the view VIEW_WEB_EDIT_INLINE */
-/* line 862, ../../scss/_alpaca.scss */
-#module-settings input:focus, textarea:focus {
-  border-width: 1px;
-}
-
-/* To Remove up/down buttons on items
-
-.alpaca-inline-item-container .alpaca-fieldset-array-item-toolbar .alpaca-fieldset-array-item-toolbar-up,
-.alpaca-inline-item-container .alpaca-fieldset-array-item-toolbar .alpaca-fieldset-array-item-toolbar-down {
-{
-	display: none;
-}
-*/
-/* To hide labels of inlined fields
-
-.alpaca-inline-item-container .alpaca-inline .alpaca-controlfield-label, .alpaca-inline-item-container .alpaca-inline .alpaca-fieldset-legend {
-	display: none;
-}
-
-*/
-/* END styles for the view VIEW_WEB_EDIT_INLINE */

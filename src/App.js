@@ -63,6 +63,12 @@ define(function (require) {
 		// App Modules
 		App.Cache = new Cache(_.extend(env.cache, cacheMap));
 
+		// Prepare Auth since it will be a POST only model
+		var auth = App.Cache.prepare('auth');
+		if(App.env.session){
+			auth.set('id', App.env.session);
+		}
+
 		// App.Analytics = new Analytics(env);
 		App.GoogleAnalytics = new GoogleAnalytics(env.ga);
 
@@ -72,10 +78,15 @@ define(function (require) {
 		Backbone.Marionette.View.prototype.cache = App.Cache;
 
 		// Fetch the prerequisite server resources
-		// var user = App.Cache.get('user');
-		// var accounts = App.Cache.get('accounts');
-		// var formData = App.Cache.get('formData');
-		// var formSchema = App.Cache.get('formSchema');
+
+		if(App.env.session){
+			// var user = App.Cache.get('user');
+			// var accounts = App.Cache.get('accounts');
+		} else {
+			// var formData = App.Cache.get('formData');
+			// var formSchema = App.Cache.get('formSchema');
+		}
+
 
 		// $.when(user.deferred, accounts.deferred).then(function () {
 

@@ -6,13 +6,10 @@ define(function (require) {
 
 	var FormSchemaModel = CacheableModel.extend({
 		url: function () {
-			return '/api/form/schema';
+			return '../api/form/schema';
 		},
 		initialize: function () {
 			this.register('formSchema');
-		},
-		parse: function (schema) {
-			return schema;
 		},
 		readError: function(){
 			App.trigger('error:ajaxReadFail', {

@@ -1,0 +1,38 @@
+<div id="miniAddManualAccount-container">
+	<span class="headerText">We Don't Have This Account In Our System Yet!</span>
+	<span class="subHeaderText">Would you like to manually add it?</span>
+
+	<div class="inputBlock">
+		<label class="labelLeft">Name</label>
+		<input class="leftInput inputStyle" type="text" value="{{searchTerm}}" id="addManual-name" />		
+	</div>
+	<div class="inputBlock">
+		<label>Type</label>
+		<div id="addManualAccount-selectForm">
+			<span class="selectFormText">Bank</span>
+			<div id="selectFormToggle">
+				<span class="selectFormToggle-caret"></span>
+			</div>
+			<input type="hidden" id="selectForm-input" value="checking" />
+		</div>
+		<div id="addManualAccount-selectForm-dropdown">
+			<span id="dropdown-caret"></span>
+			<div class="selectForm-dropdown-listItem" data-type="checking">Checking</div>
+			<div class="selectForm-dropdown-listItem" data-type="savings">Savings</div>
+			<div class="selectForm-dropdown-listItem" data-type="investment">Investments</div>
+			<div class="selectForm-dropdown-listItem" data-type="credit">Credit Cards</div>
+			<div class="selectForm-dropdown-listItem" data-type="loan">Loan</div>
+			<div class="selectForm-dropdown-listItem" data-type="mortgage">Mortgage</div>
+		</div>
+	</div>	
+	<div class="inputBlock">
+		<label class="labelLeft">Balance</label>
+		<span class="dollarSignInput">$</span>
+		<input class="leftInput inputStyle balanceInput" id="addManual-balance" type="text" value="0.00" />
+	</div>
+	<div class="inputBlock buttonContainer">
+		<button class="btn trans_btn" id="addManualAccount-postAccount">Add</button>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<button class="btn trans_btn" id="goBackToSearch" style="padding:8px 66px;margin:0px auto;display:block;">Search Again</button>

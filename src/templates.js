@@ -24,6 +24,7 @@ define(function (require) {
 		// Section.Dashboard
 		'Dashboard': require('hbars!Dashboard'),
 		'DashboardSidenav': require('hbars!Dashboard-Sidenav'),
+		'LoanSummary': require('hbars!Dashboard-LoanSummary'),
 		'DashboardLoading': require('hbars!Dashboard-Loading'),
 		
 		// Section.Signup

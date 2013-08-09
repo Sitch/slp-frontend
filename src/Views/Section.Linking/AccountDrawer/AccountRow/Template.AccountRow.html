@@ -1,0 +1,37 @@
+<div class="accountDrawer-row-name {{#if deleteStatus}}fixColor{{/if}} {{#if fixNowStatus}}fixColor{{/if}}">
+{{truncate accountModel.name 40}}
+</div>
+{{#if progressStep}}
+<div class="accountDrawer-row-status {{#if connectingComplete}}active{{/if}}">
+	{{#if connectingComplete}}
+		<div class="status-progress"></div>
+	{{else}}
+		<div class="status-icon {{#if firstDot}}active{{else}}inactive{{/if}}"></div>
+		<div class="status-icon {{#if secondDot}}active{{else}}inactive{{/if}}"></div>
+		<div class="status-icon {{#if thirdDot}}active{{else}}inactive{{/if}}"></div>
+	{{/if}}
+	<div class="clearfix"></div>
+</div>
+{{/if}}
+
+{{#if fixNowStatus}}
+	<button id="fixAccount-{{accountModel.siteId}}" data-site="{{accountModel.siteId}}" class="linking-fixAccount gold_btn">Fix Now</button>
+{{/if}}
+
+{{#if connectedStatus}}
+	<div class="accountDrawer-row-connected">
+		<span class="accountDrawer-row-connectedIcon"></span>
+		<span class="accountDrawer-row-connectedText">Connected!</span>
+	</div>
+{{/if}}
+
+{{#if deleteStatus}}
+	<button id="tryAgain-{{accountModel.siteId}}" data-name="{{accountModel.name}}" data-site="{{accountModel.siteId}}" class="linking-tryAgainAccount gold_btn">Fix Now</button>
+{{/if}}
+
+{{#if initialProgressStatus}}
+	<div class="accountDrawer-row-statusText">
+		{{status}}
+	</div>
+{{/if}}
+<div class="clearfix"></div>

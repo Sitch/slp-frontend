@@ -1,0 +1,112 @@
+<div id="errorForm-leftside">
+
+	<!-- Shadows that fade in once you've scrolled -->
+	<div id="top_shadow" style="display:none;"></div>
+	<div id="bottom_shadow" style="display:none;"></div>
+	<form id="errorForm" autocomplete="off">
+	<div id="loginForm_offset">
+		<div class="loginForm_margin"></div>
+		{{#if isMFA}}
+			{{#if mfaForm.questions}}
+				{{#each mfaForm.questions}}
+					<label>{{this}}</label>
+					<input type="text" class="loginField" name="{{this}}" data-required="true" />
+					<span class="requiredField">*</span>
+				{{/each}}
+			{{/if}}
+			{{#if mfaForm.captchaImage}}
+					<label>{{mfaForm.captchaLabel}}</label>
+					<img class="captchaImage" src="data:image/png;charset=utf-8;base64,{{mfaForm.captchaImage}}" />
+					<input type="text" class="loginField" name="captchaCode" data-required="true" />
+					<span class="requiredField">*</span>
+			{{/if}}
+			{{#if mfaForm.tokenLabel}}
+					<label>{{mfaForm.tokenLabel}}</label>
+					<input type="text" class="loginField" name="tokenCode" data-required="true" />
+					<span class="requiredField">*</span>
+			{{/if}}
+			<hr style="clear:both;" />
+		{{else}}
+			{{#each forms}}
+				{{#each requiredFields}}
+					<!-- Display Input Label -->
+					<label>{{displayName}}</label>
+					{{#foreach inputs}}
+
+							<!-- Handle Select Inputs, Fill Value List with validValues -->
+							{{#equal widgetType "select"}}
+								<div class="selectToggle"><div class="select-carat"></div></div>
+								<select name="{{paramName}}">
+									{{#each validValues}}
+										<option value="{{validValueParamName}}">{{validValueDisplayName}}</option>
+									{{/each}}
+								</select>
+							{{/equal}}
+
+							<!-- Handle Password Inputs -->
+							{{#equal widgetType "password"}}
+
+								<span class="placeholderText" id="{{paramName}}">for {{truncate ../../../../contentServiceName 38}}</span>
+								<span class="loginForm-lockIcon"></span>
+								<input {{#if size}}class="ssnField" maxlength="{{size}}" size="{{size}}"{{else}}class="loginField" {{/if}} type="{{widgetType}}" name="{{paramName}}" data-required="{{#if ../../optional}}false{{else}}true{{/if}}"/>
+
+							{{/equal}}
+
+							<!-- Handle Text Inputs -->
+							{{#equal widgetType "text"}}
+
+								<span class="placeholderText" id="{{paramName}}">for {{truncate ../../../../contentServiceName 38}}</span>
+								<span class="loginForm-lockIcon"></span>
+								<input {{#if size}}class="ssnField" maxlength="{{size}}" size="{{size}}"{{else}}class="loginField" {{/if}} type="{{widgetType}}" name="{{paramName}}" data-required="{{#if ../../optional}}false{{else}}true{{/if}}"/>
+
+							{{/equal}}
+
+							<!-- If required field, add asterisk -->
+							{{#if ../optional}} {{else}}<span class="requiredField">*</span>{{/if}}
+							<div class="clearfix"></div>
+					{{/foreach}}
+				{{/each}}
+
+				<!-- If there are oneOfCollections, add an <HR /> -->
+				{{#if oneOfCollection}}<hr /><div class="clearfix"></div>{{/if}}
+
+				<!-- Loop through oneOfCollections -->
+				{{#each oneOfCollection}}
+					{{#foreach this}}
+						<label>{{displayName}}</label>
+						{{#foreach inputs}}
+							<!-- For any input that isn't restricted in size, add placeholder text span -->
+							{{#unless size}}
+							<span class="placeholderText" id="{{paramName}}">for {{truncate ../../../../../contentServiceName 38}}</span>
+							{{/unless}}
+							<span class="loginForm-lockIcon"></span>
+							<!-- For any input that isn't restricted in size, add placeholder text span -->
+							<input {{#if size}}class="ssnField" maxlength="{{size}}" size="{{size}}"{{else}}class="loginField" {{/if}}type="{{widgetType}}" name="{{paramName}}" value="{{defaultValue}}" />
+
+							<!-- #unless is used because we don't want to clear:both on SSN fields -->
+							{{#unless size}}<div class="clearfix"></div>{{/unless}}
+
+							<!-- If it is the last input, put clear:both after -->
+							{{#if last}}<div class="clearfix"></div>{{/if}}
+
+						{{/foreach}}
+
+						<!-- Unless it is the last input for oneOfCollections, display "OR" after input -->
+						{{#unless $last}}<span class="or_tag">OR</span>{{/unless}}
+
+					{{/foreach}}
+				{{/each}}
+			{{/each}}
+		{{/if}}
+		<div class="loginForm_margin"></div>
+	</div>
+	<div id="loginForm_buttons">
+		<button type="button" id="linking-goBack" class="btn trans_btn">Go Back</button>
+		<input type="submit" id="connectAccount" class="btn trans_btn" value="Fix Account" />
+	</form>
+	</div>
+</div>
+<div id="errorForm-rightside">
+	<p>{{{errorMessage}}}</p>
+</div>
+<div class="clearfix"></div>

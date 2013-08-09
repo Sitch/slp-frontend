@@ -533,45 +533,715 @@ p.small-note {
   padding: 60px;
 }
 
-/* line 1, ../../scss/_charts.scss */
+/********************
+ * HTML CSS
+ */
+/* line 7, ../../scss/_nvd3.scss */
+.chartWrap {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/********************
+ * TOOLTIP CSS
+ */
+/* line 18, ../../scss/_nvd3.scss */
+.nvtooltip {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  z-index: 10000;
+  font-family: Arial;
+  font-size: 13px;
+  transition: opacity 500ms linear;
+  -moz-transition: opacity 500ms linear;
+  -webkit-transition: opacity 500ms linear;
+  transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -webkit-transition-delay: 500ms;
+  -moz-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 53, ../../scss/_nvd3.scss */
+.nvtooltip h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 59, ../../scss/_nvd3.scss */
+.nvtooltip p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 65, ../../scss/_nvd3.scss */
+.nvtooltip span {
+  display: inline-block;
+  margin: 2px 0;
+}
+
+/* line 70, ../../scss/_nvd3.scss */
+.nvtooltip-pending-removal {
+  position: absolute;
+  pointer-events: none;
+}
+
+/********************
+ * SVG CSS
+ */
+/* line 81, ../../scss/_nvd3.scss */
 svg {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Trying to get SVG to act like a greedy block in all browsers */
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 95, ../../scss/_nvd3.scss */
+svg text {
+  font: normal 12px sans-serif;
+}
+
+/* line 99, ../../scss/_nvd3.scss */
+svg .title {
+  font: bold 14px Arial;
+}
+
+/* line 103, ../../scss/_nvd3.scss */
+.nvd3 .nv-background {
+  fill: white;
+  fill-opacity: 0;
+  /*
+  pointer-events: none;
+  */
+}
+
+/* line 111, ../../scss/_nvd3.scss */
+.nvd3.nv-noData {
+  font-size: 18px;
+  font-weight: bolf;
+}
+
+/**********
+*  Brush
+*/
+/* line 121, ../../scss/_nvd3.scss */
+.nv-brush .extent {
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+/**********
+*  Legend
+*/
+/* line 135, ../../scss/_nvd3.scss */
+.nvd3 .nv-legend .disabled circle {
+  fill-opacity: 0;
+}
+
+/**********
+*  Axes
+*/
+/* line 145, ../../scss/_nvd3.scss */
+.nvd3 .nv-axis path {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .75;
+  shape-rendering: crispEdges;
+}
+
+/* line 152, ../../scss/_nvd3.scss */
+.nvd3 .nv-axis path.domain {
+  stroke-opacity: .75;
+}
+
+/* line 156, ../../scss/_nvd3.scss */
+.nvd3 .nv-axis.nv-x path.domain {
+  stroke-opacity: 0;
+}
+
+/* line 160, ../../scss/_nvd3.scss */
+.nvd3 .nv-axis line {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .25;
+  shape-rendering: crispEdges;
+}
+
+/* line 167, ../../scss/_nvd3.scss */
+.nvd3 .nv-axis line.zero {
+  stroke-opacity: .75;
+}
+
+/* line 171, ../../scss/_nvd3.scss */
+.nvd3 .nv-axis .nv-axisMaxMin text {
+  font-weight: bold;
+}
+
+/* line 175, ../../scss/_nvd3.scss */
+.nvd3 .x .nv-axis .nv-axisMaxMin text,
+.nvd3 .x2 .nv-axis .nv-axisMaxMin text,
+.nvd3 .x3 .nv-axis .nv-axisMaxMin text {
+  text-anchor: middle;
+}
+
+/**********
+*  Brush
+*/
+/* line 187, ../../scss/_nvd3.scss */
+.nv-brush .resize path {
+  fill: #eee;
+  stroke: #666;
+}
+
+/**********
+*  Bars
+*/
+/* line 198, ../../scss/_nvd3.scss */
+.nvd3 .nv-bars .negative rect {
+  zfill: brown;
+}
+
+/* line 202, ../../scss/_nvd3.scss */
+.nvd3 .nv-bars rect {
+  zfill: steelblue;
+  fill-opacity: .75;
+  transition: fill-opacity 250ms linear;
+  -moz-transition: fill-opacity 250ms linear;
+  -webkit-transition: fill-opacity 250ms linear;
+}
+
+/* line 211, ../../scss/_nvd3.scss */
+.nvd3 .nv-bars rect:hover {
+  fill-opacity: 1;
+}
+
+/* line 215, ../../scss/_nvd3.scss */
+.nvd3 .nv-bars .hover rect {
+  fill: lightblue;
+}
+
+/* line 219, ../../scss/_nvd3.scss */
+.nvd3 .nv-bars text {
+  fill: rgba(0, 0, 0, 0);
+}
+
+/* line 223, ../../scss/_nvd3.scss */
+.nvd3 .nv-bars .hover text {
+  fill: black;
+}
+
+/* line 227, ../../scss/_nvd3.scss */
+.nvd3 .nv-x.nv-axis text {
+  transform: rotate(90);
+}
+
+/**********
+*  Bars
+*/
+/* line 236, ../../scss/_nvd3.scss */
+.nvd3 .nv-multibar .nv-groups rect,
+.nvd3 .nv-multibarHorizontal .nv-groups rect,
+.nvd3 .nv-discretebar .nv-groups rect {
+  stroke-opacity: 0;
+  transition: fill-opacity 250ms linear;
+  -moz-transition: fill-opacity 250ms linear;
+  -webkit-transition: fill-opacity 250ms linear;
+}
+
+/* line 246, ../../scss/_nvd3.scss */
+.nvd3 .nv-multibar .nv-groups rect:hover,
+.nvd3 .nv-multibarHorizontal .nv-groups rect:hover,
+.nvd3 .nv-discretebar .nv-groups rect:hover {
+  fill-opacity: 1;
+}
+
+/* line 252, ../../scss/_nvd3.scss */
+.nvd3 .nv-discretebar .nv-groups text,
+.nvd3 .nv-multibarHorizontal .nv-groups text {
+  font-weight: bold;
+  fill: black;
+  stroke: rgba(0, 0, 0, 0);
+}
+
+/***********
+*  Pie Chart
+*/
+/* line 263, ../../scss/_nvd3.scss */
+.nvd3.nv-pie path {
+  stroke-opacity: 0;
+  transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+  -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+  -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+}
+
+/* line 272, ../../scss/_nvd3.scss */
+.nvd3.nv-pie .nv-slice text {
+  stroke: #000;
+  stroke-width: 0;
+}
+
+/* line 277, ../../scss/_nvd3.scss */
+.nvd3.nv-pie path {
+  stroke: #fff;
+  stroke-width: 1px;
+  stroke-opacity: 1;
+}
+
+/* line 283, ../../scss/_nvd3.scss */
+.nvd3.nv-pie .hover path {
+  fill-opacity: .7;
+  /*
+    stroke-width: 6px;
+    stroke-opacity: 1;
+  */
+}
+
+/* line 291, ../../scss/_nvd3.scss */
+.nvd3.nv-pie .nv-label rect {
+  fill-opacity: 0;
+  stroke-opacity: 0;
+}
+
+/**********
+* Lines
+*/
+/* line 300, ../../scss/_nvd3.scss */
+.nvd3 .nv-groups path.nv-line {
+  fill: none;
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  shape-rendering: geometricPrecision;
+  /*
+  transition: stroke-width 250ms linear;
+  -moz-transition: stroke-width 250ms linear;
+  -webkit-transition: stroke-width 250ms linear;
+
+  transition-delay: 250ms
+  -moz-transition-delay: 250ms;
+  -webkit-transition-delay: 250ms;
+  */
+}
+
+/* line 317, ../../scss/_nvd3.scss */
+.nvd3 .nv-groups path.nv-area {
+  stroke: none;
+  stroke-linecap: round;
+  shape-rendering: geometricPrecision;
+  /*
+  stroke-width: 2.5px;
+  transition: stroke-width 250ms linear;
+  -moz-transition: stroke-width 250ms linear;
+  -webkit-transition: stroke-width 250ms linear;
+
+  transition-delay: 250ms
+  -moz-transition-delay: 250ms;
+  -webkit-transition-delay: 250ms;
+  */
+}
+
+/* line 334, ../../scss/_nvd3.scss */
+.nvd3 .nv-line.hover path {
+  stroke-width: 6px;
+}
+
+/*
+.nvd3.scatter .groups .point {
+  fill-opacity: 0.1;
+  stroke-opacity: 0.1;
+}
+  */
+/* line 345, ../../scss/_nvd3.scss */
+.nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {
+  fill-opacity: 0;
+  stroke-opacity: 0;
+}
+
+/* line 350, ../../scss/_nvd3.scss */
+.nvd3.nv-scatter.nv-single-point .nv-groups .nv-point {
+  fill-opacity: 0.5 !important;
+  stroke-opacity: 0.5 !important;
+}
+
+/* line 356, ../../scss/_nvd3.scss */
+.nvd3 .nv-groups .nv-point {
+  transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+  -moz-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+  -webkit-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+}
+
+/* line 362, ../../scss/_nvd3.scss */
+.nvd3.nv-scatter .nv-groups .nv-point.hover,
+.nvd3 .nv-groups .nv-point.hover {
+  stroke-width: 20px;
+  fill-opacity: 0.5 !important;
+  stroke-opacity: 0.5 !important;
+}
+
+/* line 370, ../../scss/_nvd3.scss */
+.nvd3 .nv-point-paths path {
+  stroke: #aaa;
+  stroke-opacity: 0;
+  fill: #eee;
+  fill-opacity: 0;
+}
+
+/* line 379, ../../scss/_nvd3.scss */
+.nvd3 .nv-indexLine {
+  cursor: ew-resize;
+}
+
+/**********
+* Distribution
+*/
+/* line 388, ../../scss/_nvd3.scss */
+.nvd3 .nv-distribution {
+  pointer-events: none;
+}
+
+/**********
+*  Scatter
+*/
+/* line 398, ../../scss/_nvd3.scss */
+.nvd3 .nv-groups .nv-point {
+  pointer-events: none;
+}
+
+/* line 402, ../../scss/_nvd3.scss */
+.nvd3 .nv-groups .nv-point.hover {
+  stroke-width: 20px;
+  stroke-opacity: .5;
+}
+
+/* line 407, ../../scss/_nvd3.scss */
+.nvd3 .nv-scatter .nv-point.hover {
+  fill-opacity: 1;
+}
+
+/*
+.nv-group.hover .nv-point {
+  fill-opacity: 1;
+}
+*/
+/**********
+*  Stacked Area
+*/
+/* line 422, ../../scss/_nvd3.scss */
+.nvd3.nv-stackedarea path.nv-area {
+  fill-opacity: .7;
+  /*
+  stroke-opacity: .65;
+  fill-opacity: 1;
+  */
+  stroke-opacity: 0;
+  transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+  -moz-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+  -webkit-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+  /*
+  transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -webkit-transition-delay: 500ms;
+  */
+}
+
+/* line 442, ../../scss/_nvd3.scss */
+.nvd3.nv-stackedarea path.nv-area.hover {
+  fill-opacity: .9;
+  /*
+  stroke-opacity: .85;
+  */
+}
+
+/*
+.d3stackedarea .groups path {
+  stroke-opacity: 0;
+}
+  */
+/* line 456, ../../scss/_nvd3.scss */
+.nvd3.nv-stackedarea .nv-groups .nv-point {
+  stroke-opacity: 0;
+  fill-opacity: 0;
+}
+
+/* line 461, ../../scss/_nvd3.scss */
+.nvd3.nv-stackedarea .nv-groups .nv-point.hover {
+  stroke-width: 20px;
+  stroke-opacity: .75;
+  fill-opacity: 1;
+}
+
+/**********
+*  Line Plus Bar
+*/
+/* line 473, ../../scss/_nvd3.scss */
+.nvd3.nv-linePlusBar .nv-bar rect {
+  fill-opacity: .75;
+}
+
+/* line 477, ../../scss/_nvd3.scss */
+.nvd3.nv-linePlusBar .nv-bar rect:hover {
+  fill-opacity: 1;
+}
+
+/**********
+*  Bullet
+*/
+/* line 486, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet {
   font: 10px sans-serif;
 }
 
-/* line 5, ../../scss/_charts.scss */
-path {
-  fill: steelblue;
+/* line 487, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet rect {
+  fill-opacity: .6;
 }
 
-/* line 9, ../../scss/_charts.scss */
-.axis path,
-.axis line {
-  fill: none;
+/* line 488, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet rect:hover {
+  fill-opacity: 1;
+}
+
+/* line 489, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet .nv-marker {
   stroke: #000;
-  shape-rendering: crispEdges;
+  stroke-width: 2px;
 }
 
-/* line 16, ../../scss/_charts.scss */
-.brush .extent {
-  stroke: #fff;
-  fill-opacity: .125;
-  shape-rendering: crispEdges;
+/* line 490, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet .nv-markerTriangle {
+  stroke: #000;
+  fill: #fff;
+  stroke-width: 1.5px;
+}
+
+/* line 491, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet .nv-tick line {
+  stroke: #666;
+  stroke-width: .5px;
+}
+
+/* line 492, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet .nv-range.nv-s0 {
+  fill: #eee;
+}
+
+/* line 493, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet .nv-range.nv-s1 {
+  fill: #ddd;
+}
+
+/* line 494, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet .nv-range.nv-s2 {
+  fill: #ccc;
+}
+
+/* line 495, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet .nv-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* line 496, ../../scss/_nvd3.scss */
+.nvd3.nv-bullet .nv-subtitle {
+  fill: #999;
+}
+
+/**********
+* Sparkline
+*/
+/* line 505, ../../scss/_nvd3.scss */
+.nvd3.nv-sparkline path {
+  fill: none;
+}
+
+/* line 509, ../../scss/_nvd3.scss */
+.nvd3.nv-sparklineplus g.nv-hoverValue {
+  pointer-events: none;
+}
+
+/* line 513, ../../scss/_nvd3.scss */
+.nvd3.nv-sparklineplus .nv-hoverValue line {
+  stroke: #f44;
+  stroke-width: 1.5px;
+}
+
+/* line 518, ../../scss/_nvd3.scss */
+.nvd3.nv-sparklineplus,
+.nvd3.nv-sparklineplus g {
+  pointer-events: all;
+}
+
+/* line 523, ../../scss/_nvd3.scss */
+.nvd3 .nv-hoverArea {
+  fill-opacity: 0;
+  stroke-opacity: 0;
+}
+
+/* line 528, ../../scss/_nvd3.scss */
+.nvd3.nv-sparklineplus .nv-xValue,
+.nvd3.nv-sparklineplus .nv-yValue {
+  /*
+  stroke: #666;
+  */
+  stroke-width: 0;
+  font-size: .8em;
+  font-weight: normal;
+}
+
+/* line 538, ../../scss/_nvd3.scss */
+.nvd3.nv-sparklineplus .nv-yValue {
+  stroke: #f66;
+}
+
+/* line 542, ../../scss/_nvd3.scss */
+.nvd3.nv-sparklineplus .nv-maxValue {
+  stroke: #2ca02c;
+  fill: #2ca02c;
+}
+
+/* line 547, ../../scss/_nvd3.scss */
+.nvd3.nv-sparklineplus .nv-minValue {
+  stroke: #d62728;
+  fill: #d62728;
+}
+
+/* line 552, ../../scss/_nvd3.scss */
+.nvd3.nv-sparklineplus .nv-currentValue {
+  stroke: #444;
+  fill: #444;
+}
+
+/**********
+* historical stock
+*/
+/* line 561, ../../scss/_nvd3.scss */
+.nvd3.nv-ohlcBar .nv-ticks .nv-tick {
+  stroke-width: 2px;
+}
+
+/* line 565, ../../scss/_nvd3.scss */
+.nvd3.nv-ohlcBar .nv-ticks .nv-tick.hover {
+  stroke-width: 4px;
+}
+
+/* line 569, ../../scss/_nvd3.scss */
+.nvd3.nv-ohlcBar .nv-ticks .nv-tick.positive {
+  stroke: #2ca02c;
+}
+
+/* line 573, ../../scss/_nvd3.scss */
+.nvd3.nv-ohlcBar .nv-ticks .nv-tick.negative {
+  stroke: #d62728;
+}
+
+/* line 577, ../../scss/_nvd3.scss */
+.nvd3.nv-historicalStockChart .nv-axis .nv-axislabel {
+  font-weight: bold;
+}
+
+/* line 581, ../../scss/_nvd3.scss */
+.nvd3.nv-historicalStockChart .nv-dragTarget {
+  fill-opacity: 0;
+  stroke: none;
+  cursor: move;
+}
+
+/* line 587, ../../scss/_nvd3.scss */
+.nvd3 .nv-brush .extent {
+  /*
+  cursor: ew-resize !important;
+  */
+  fill-opacity: 0 !important;
+}
+
+/* line 594, ../../scss/_nvd3.scss */
+.nvd3 .nv-brushBackground rect {
+  stroke: #000;
+  stroke-width: .4;
+  fill: #fff;
+  fill-opacity: .7;
+}
+
+/**********
+* Indented Tree
+*/
+/**
+ * TODO: the following 3 selectors are based on classes used in the example.  I should either make them standard and leave them here, or move to a CSS file not included in the library
+ */
+/* line 611, ../../scss/_nvd3.scss */
+.nvd3.nv-indentedtree .name {
+  margin-left: 5px;
+}
+
+/* line 615, ../../scss/_nvd3.scss */
+.nvd3.nv-indentedtree .clickable {
+  color: #08C;
+  cursor: pointer;
+}
+
+/* line 620, ../../scss/_nvd3.scss */
+.nvd3.nv-indentedtree span.clickable:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+/* line 626, ../../scss/_nvd3.scss */
+.nvd3.nv-indentedtree .nv-childrenCount {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* line 631, ../../scss/_nvd3.scss */
+.nvd3.nv-indentedtree .nv-treeicon {
+  cursor: pointer;
+  /*
+  cursor: n-resize;
+  */
+}
+
+/* line 638, ../../scss/_nvd3.scss */
+.nvd3.nv-indentedtree .nv-treeicon.nv-folded {
+  cursor: pointer;
+  /*
+  cursor: s-resize;
+  */
 }
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
 /* Center align the text within the three columns below the carousel */
-/* line 17, ../../scss/screen.scss */
+/* line 18, ../../scss/screen.scss */
 .marketing .span4 {
   text-align: center;
 }
 
-/* line 20, ../../scss/screen.scss */
+/* line 21, ../../scss/screen.scss */
 .marketing h2 {
   font-weight: normal;
 }
 
-/* line 23, ../../scss/screen.scss */
+/* line 24, ../../scss/screen.scss */
 .marketing .span4 p {
   margin-left: 10px;
   margin-right: 10px;
@@ -579,38 +1249,38 @@ path {
 
 /* Featurettes
 ------------------------- */
-/* line 32, ../../scss/screen.scss */
+/* line 33, ../../scss/screen.scss */
 .featurette-divider {
   margin: 80px 0;
   /* Space out the Bootstrap <hr> more */
 }
 
-/* line 35, ../../scss/screen.scss */
+/* line 36, ../../scss/screen.scss */
 .featurette {
   padding-top: 120px;
   /* Vertically center images part 1: add padding above and below text. */
   overflow: visible;
 }
 
-/* line 50, ../../scss/screen.scss */
+/* line 51, ../../scss/screen.scss */
 .featurette-image {
   margin-top: -120px;
   /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
 }
 
 /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-/* line 55, ../../scss/screen.scss */
+/* line 56, ../../scss/screen.scss */
 .featurette-image.pull-left {
   margin-right: 40px;
 }
 
-/* line 58, ../../scss/screen.scss */
+/* line 59, ../../scss/screen.scss */
 .featurette-image.pull-right {
   margin-left: 40px;
 }
 
 /* Thin out the marketing headings */
-/* line 63, ../../scss/screen.scss */
+/* line 64, ../../scss/screen.scss */
 .featurette-heading {
   font-size: 50px;
   font-weight: 300;
@@ -621,36 +1291,36 @@ path {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 @media (max-width: 979px) {
-  /* line 77, ../../scss/screen.scss */
+  /* line 78, ../../scss/screen.scss */
   .container.navbar-wrapper {
     margin-bottom: 0;
     width: auto;
   }
 
-  /* line 81, ../../scss/screen.scss */
+  /* line 82, ../../scss/screen.scss */
   .navbar-inner {
     border-radius: 0;
     margin: -20px 0;
   }
 
-  /* line 86, ../../scss/screen.scss */
+  /* line 87, ../../scss/screen.scss */
   .carousel .item {
     height: 500px;
   }
 
-  /* line 89, ../../scss/screen.scss */
+  /* line 90, ../../scss/screen.scss */
   .carousel img {
     width: auto;
     height: 500px;
   }
 
-  /* line 94, ../../scss/screen.scss */
+  /* line 95, ../../scss/screen.scss */
   .featurette {
     height: auto;
     padding: 0;
   }
 
-  /* line 98, ../../scss/screen.scss */
+  /* line 99, ../../scss/screen.scss */
   .featurette-image.pull-left,
   .featurette-image.pull-right {
     display: block;
@@ -660,81 +1330,81 @@ path {
   }
 }
 @media (max-width: 767px) {
-  /* line 110, ../../scss/screen.scss */
+  /* line 111, ../../scss/screen.scss */
   .navbar-inner {
     margin: -20px;
   }
 
-  /* line 114, ../../scss/screen.scss */
+  /* line 115, ../../scss/screen.scss */
   .carousel {
     margin-left: -20px;
     margin-right: -20px;
   }
 
-  /* line 121, ../../scss/screen.scss */
+  /* line 122, ../../scss/screen.scss */
   .carousel .item {
     height: 300px;
   }
 
-  /* line 124, ../../scss/screen.scss */
+  /* line 125, ../../scss/screen.scss */
   .carousel img {
     height: 300px;
   }
 
-  /* line 127, ../../scss/screen.scss */
+  /* line 128, ../../scss/screen.scss */
   .carousel-caption {
     width: 65%;
     padding: 0 70px;
     margin-top: 100px;
   }
 
-  /* line 132, ../../scss/screen.scss */
+  /* line 133, ../../scss/screen.scss */
   .carousel-caption h1 {
     font-size: 30px;
   }
 
-  /* line 135, ../../scss/screen.scss */
+  /* line 136, ../../scss/screen.scss */
   .carousel-caption .lead,
   .carousel-caption .btn {
     font-size: 18px;
   }
 
-  /* line 140, ../../scss/screen.scss */
+  /* line 141, ../../scss/screen.scss */
   .marketing .span4 + .span4 {
     margin-top: 40px;
   }
 
-  /* line 144, ../../scss/screen.scss */
+  /* line 145, ../../scss/screen.scss */
   .featurette-heading {
     font-size: 30px;
   }
 
-  /* line 147, ../../scss/screen.scss */
+  /* line 148, ../../scss/screen.scss */
   .featurette .lead {
     font-size: 18px;
     line-height: 1.5;
   }
 }
-/* line 153, ../../scss/screen.scss */
+/* line 154, ../../scss/screen.scss */
 .carousel-control {
   color: #85929d;
   background: none;
   border: none;
 }
 
-/* line 159, ../../scss/screen.scss */
+/* line 160, ../../scss/screen.scss */
 .carousel-caption {
   text-align: center;
 }
 
-/* line 163, ../../scss/screen.scss */
+/* line 164, ../../scss/screen.scss */
 .featurette-img-shadow {
   -webkit-box-shadow: 1px 1px 10px #888888;
   -moz-box-shadow: 1px 1px 10px #888888;
   box-shadow: 1px 1px 10px #888888;
 }
 
-/* line 167, ../../scss/screen.scss */
+/* line 168, ../../scss/screen.scss */
 #landing {
   overflow: hidden;
 }

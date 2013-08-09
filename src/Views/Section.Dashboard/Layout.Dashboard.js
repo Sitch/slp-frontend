@@ -7,6 +7,7 @@ define(function (require) {
 	var Marionette = require('marionette');
 	var Template = require('templates');
 
+	var LoanSummary = require('./ItemView.LoanSummary');
 	var LoanCalculator = require('../Charts/ItemView.LoanCalculator');
 	var DashboardSidenav = require('./ItemView.DashboardSidenav');
 	var DashboardLoading = require('./DashboardLoading/ItemView.DashboardLoading');
@@ -17,29 +18,25 @@ define(function (require) {
 		className: 'dashboard',
 		regions: {
 			left: '#dash-left',
-			middle: '#dash-middle'
+			middle: '#dash-middle',
 			// right: '#dash-right'
+			info: '#info'
 		},
 		initialize: function (options) {
-
-			// this.options = options || {};
-			// this.tasks = this.cache.get('tasks');
-			// this.accounts = this.cache.get('accounts');
+			this.accounts = this.cache.get('accounts');
 		},
 		onShow: function () {
+			var self = this;
+			var accounts = this.accounts.deferred;
 
-			this.left.show(new DashboardSidenav());
-
-			this.middle.show(new LoanCalculator());
-			
-
-			// var self = this;
-			// if (this.tasks.deferred.state() === 'pending') {
-			// 	this.content.show(new DashboardLoading());
-			// }
-			// $.when(this.tasks.deferred).then(function () {
-			// 	self.content.show(new Tasks(this.options));
-			// });
+			if (accounts.state() === 'pending') {
+				this.middle.show(new DashboardLoading());
+			}
+			$.when(accounts).then(function () {
+				self.left.show(new DashboardSidenav());
+				self.middle.show(new LoanCalculator());
+				self.info.show(new LoanSummary());
+			});
 		}
 	});
 	return DashboardLayout;

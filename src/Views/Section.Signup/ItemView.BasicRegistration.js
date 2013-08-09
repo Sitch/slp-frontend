@@ -12,8 +12,8 @@ define(function (require) {
 	var BasicRegistration = Backbone.Marionette.ItemView.extend({
 		template: Template.BasicRegistration,
 		events: {
-			'click #signup-btn': 'register',
-			'click a': 'surpress'
+			'click #signup-btn': 'submits',
+			'click a.close': 'surpress'
 		},
 		initialize: function () {
 			this.user = this.cache.prepare('user');
@@ -27,7 +27,7 @@ define(function (require) {
 
 			this.$('.alert').removeClass('hidden');
 		},
-		register: function (event) {
+		submit: function (event) {
 			this.surpress(event);
 
 			var self = this;

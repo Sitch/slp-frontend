@@ -5,6 +5,12 @@ define(function (require) {
 	var CacheableModel = require('Shared/Cache/Model.Cacheable');
 
 	var UserModel = CacheableModel.extend({
+		defaults: {
+			password: '',
+			username: '',
+			email: '',
+			agrees: false
+		},
 		writeOnly: true,
 		url: function () {
 			return '../api/users';
@@ -12,7 +18,7 @@ define(function (require) {
 		initialize: function () {
 			this.register('user');
 		},
-		hasErrors: function(){
+		hasErrors: function () {
 			var errors = this.getErrors();
 			if (errors.password || errors.username || errors.email || errors.agrees) {
 				return errors;

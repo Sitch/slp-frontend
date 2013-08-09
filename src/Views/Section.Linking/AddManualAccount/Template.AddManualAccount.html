@@ -1,0 +1,49 @@
+<div id="loginForm_main_headerBg"></div>
+<div id="loginForm_main_header"><span>CONNECT YOUR ACCOUNTS</span></div>
+<div id="addManualAccount-body">
+	<h3>Manually Add an Account</h3>
+	<hr>
+	<div id="leftInputs">
+
+		<label class="labelLeft">Name</label>
+		<input class="leftInput inputStyle" type="text" id="addManual-name" />
+
+		<label class="labelLeft">Balance</label>
+		<span class="dollarSignInput">$</span>
+		<input class="leftInput inputStyle balanceInput" id="addManual-balance" type="text" value="0.00" />
+
+	</div>
+
+	<div id="rightInputs">
+		<label>Type</label>
+		<div id="addManualAccount-selectForm">
+			<span class="selectFormText">Checking</span>
+			<div id="selectFormToggle">
+				<span class="selectFormToggle-caret"></span>
+			</div>
+			<input type="hidden" id="addManual-containerType" value="checking" />
+		</div>
+		<div id="addManualAccount-selectForm-dropdown">
+			<span id="dropdown-caret"></span>
+			<div class="selectForm-dropdown-listItem" data-type="checking">Checking</div>
+			<div class="selectForm-dropdown-listItem" data-type="savings">Savings</div>
+			<div class="selectForm-dropdown-listItem" data-type="investment">Investments</div>
+			<div class="selectForm-dropdown-listItem" data-type="credit">Credit Cards</div>
+			<div class="selectForm-dropdown-listItem" data-type="loan">Loan</div>
+			<div class="selectForm-dropdown-listItem" data-type="mortgage">Mortgage</div>
+			<div class="selectForm-dropdown-listItem" data-type="other">Other</div>
+		</div>
+		<div id="addManualAccount-radioButtons" style="display:none;">
+		<form id="choose_account_type">
+			<input class="radioInput" type="radio" name="assetType" value="Asset" checked> <span class="radioLabel">Asset</span>
+			<input class="radioInput" type="radio" name="assetType" value="Debt"> <span class="radioLabel">Liability</span>
+		</form>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<hr>
+	<div id="addManualAccount-buttons">
+		<button class="btn trans_btn" id="goBackToSearch">Cancel</button>
+		<button class="btn disabled" id="linking-addManualAccount-enter">Add Account</button>
+	</div>
+</div>

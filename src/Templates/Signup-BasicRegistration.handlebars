@@ -9,11 +9,14 @@
         <input class="span12" placeholder="Username" type="text" name="username">
         <input class="span12" placeholder="Email" type="email" name="email"> 
         <input class="span12" placeholder="Password" type="password" name="password">	 	
-        <label class="checkbox">
+        {{! <label class="checkbox">
             <input type="checkbox" name="remember" value="1"> Remember Me
+        </label> }}
+        <label class="checkbox">
+            <input type="checkbox" name="agrees" value="1"> Agree to <a href="terms">Terms of Service</a>
         </label>
         <label class="checkbox">
-            <input type="checkbox" name="agrees" value="1"> Agree to <a href="#">Terms of Service</a>
+            <input type="checkbox" name="opt-in" value="1"> Agree to <a href="opt-in">Opt-in</a>
         </label>
         <button id="signup-btn" class="btn-info btn">Signup</button>
     </form>    

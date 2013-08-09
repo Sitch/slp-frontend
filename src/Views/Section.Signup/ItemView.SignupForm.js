@@ -22,6 +22,7 @@ define(function (require) {
 				schema: this.formSchema.get('schema'),
 				options: this.formSchema.get('options')
 			});
+			this.$('.icon-star').hide();
 		},
 		onShow: function () {
 			this.displayForm();

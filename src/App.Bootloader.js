@@ -21,7 +21,8 @@
 			debug: '../public/libs/javascript-debug-master/ba-debug',
 			alpaca: '../public/libs/alpaca/alpaca.min',
 			d3: '../public/components/d3/d3',
-			// moment: '../public/components/moment/moment',
+			nvd3: '../public/components/nvd3/nv.d3',
+			moment: '../public/components/moment/moment',
 			// 'underscore.string': '../public/components/underscore.string/underscore.string',
 
 			// Shims
@@ -59,8 +60,15 @@
 			'jquery.sticky': {
 				deps: ['jquery']
 			},
+			alpaca: {
+				deps: ['jquery']
+			},
 			d3: {
 				exports: 'd3'
+			},
+			nvd3: {
+				deps: ['d3'],
+				exports: 'nv'
 			}
 			// alpaca: {
 			// 	deps: ['jquery']

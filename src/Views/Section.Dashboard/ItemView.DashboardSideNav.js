@@ -9,6 +9,14 @@ define(function (require) {
 
 	var Sidenav = Backbone.Marionette.ItemView.extend({
 		template: Template.DashboardSidenav,
+		templateHelpers: function () {
+			return {
+				loans: this.accounts.getAllLoans()
+			};
+		},
+		initialize: function () {
+			this.accounts = this.cache.get('accounts');
+		}
 	});
 	return Sidenav;
 });

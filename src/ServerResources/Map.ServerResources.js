@@ -2,6 +2,7 @@ define(function (require) {
 	'use strict';
 
 	var Auth = require('./Model.Auth');
+	var Account = require('./Accounts/Model.Account');
 	var Accounts = require('./Accounts/Collection.Accounts');
 	var FormData = require('./Forms/Model.FormData');
 	var FormSchema = require('./Forms/Model.FormSchema');
@@ -10,6 +11,7 @@ define(function (require) {
 	return {
 		constructorMap: {
 			'auth': Auth,
+			'account': Account,
 			'accounts': Accounts,
 			'formData': FormData,
 			'formSchema': FormSchema,
@@ -17,6 +19,7 @@ define(function (require) {
 		},
 		invalidateMap: {
 			'auth': [],
+			'account': ['account', 'accounts'],
 			'accounts': ['accounts'],
 			'formData': ['formData'],
 			'formSchema': ['formSchema'],

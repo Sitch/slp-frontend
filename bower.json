@@ -21,6 +21,7 @@
     "moment": "~2.1.0",
     "socket.io-client": "~0.9.16",
     "fancyInput": "~1.2.0",
-    "chosen": "~1.0.0"
+    "chosen": "~1.0.0",
+    "nvd3": "~1.0.0-beta"
   }
 }

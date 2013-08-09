@@ -1,0 +1,34 @@
+<!-- Shadows that fade in once you've scrolled -->
+<div id="top_shadow" style="display:none;"></div>
+<div id="bottom_shadow" style="display:none;"></div>
+<form id="loginForm" autocomplete="off">
+<div id="loginForm_offset">
+	<div class="loginForm_margin"></div>
+	{{#if mfaForm.questions}}
+		{{#each mfaForm.questions}}
+			<label>{{this}}</label>
+			<input type="text" class="loginField" name="{{this}}" data-required="true" />
+			<span class="requiredField">*</span>
+			<div style="clear:both;"></div>
+		{{/each}}
+	{{/if}}
+	{{#if mfaForm.captchaImage}}
+			<label>{{mfaForm.captchaLabel}}</label>
+			<img class="captchaImage" src="data:image/png;charset=utf-8;base64,{{mfaForm.captchaImage}}" />
+			<input type="text" class="loginField" name="captchaCode" data-required="true" />
+			<span class="requiredField">*</span>
+	{{/if}}
+	{{#if mfaForm.tokenLabel}}
+			<label>{{mfaForm.tokenLabel}}</label>
+			<input type="text" class="loginField" name="tokenCode" data-required="true" />
+			<span class="requiredField">*</span>
+	{{/if}}
+	<div class="loginForm_margin"></div>
+
+</div>
+<div style="clear:both;"></div>
+<div id="loginForm_buttons">
+	<button type="button" id="linking-goBack" class="btn trans_btn">Go Back</button>
+	<input type="submit" id="connectAccount" class="btn trans_btn" value="Connect Accounts" />
+	</form>
+</div>

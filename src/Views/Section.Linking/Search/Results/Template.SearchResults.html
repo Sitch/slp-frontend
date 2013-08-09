@@ -1,0 +1,37 @@
+{{#if popular}}
+<h3 style="font-size:14px;font-weight:bold;color:#636466;">or Choose From These Popular Accounts</h3>
+<div id="popularResults-back" class="disabled"></div>
+<div id="popularResults-forward"></div>
+<div id="popularResults-leftFade"></div>
+<div id="popularResults-rightFade"></div>
+	<div id="results">
+		<div id="siteSlider">
+		{{#each siteBuckets}}
+			<ul class="popularResults">
+				{{#each this}}
+<li data-id="{{this.id}}" rel="tooltip" data-original-title="{{this.name}}" class="popularAccount" style="background-position:-{{x this.x}}px -{{y this.y}}px"></li>
+				{{/each}}
+			</ul>
+		{{/each}}
+		<div class="clearfix"></div>
+		</div>
+	</div>	
+{{else}}
+<h3 style="font-size:14px;font-weight:bold;color:#636466;">Search Results</h3>
+<div id="popularResults-back" class="disabled" style="display:none;"></div>
+<div id="popularResults-forward" style="display:none"></div>
+<div id="popularResults-leftFade"></div>
+<div id="popularResults-rightFade"></div>
+	<div id="results">
+		<div id="siteSlider">
+		{{#each siteBuckets}}
+			<div class="siteSlide">
+				{{#each this}}
+					<div class="siteName" data-id="{{id}}"><span class="siteIcon {{containerType}}"></span>{{truncate this.name 35}}</div>
+				{{/each}}
+			</div>
+		{{/each}}
+		<div class="clearfix"></div>
+		</div>
+	</div>	
+{{/if}}

@@ -255,6 +255,8 @@ define(function (require) {
 		},
 		projection: function (until) {
 
+			// var self = this;
+
 			var loans = this.getAllLoans();
 			var range = this.chooseRange(loans, until);
 
@@ -267,7 +269,7 @@ define(function (require) {
 
 				return {
 					key: name,
-					// color: '#333333',
+					// color: self.palette.get(),
 					values: Accountant.timeBalanceProjection(balance, interest, payment, range)
 				};
 			});

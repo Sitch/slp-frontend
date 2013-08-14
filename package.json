@@ -1,13 +1,14 @@
 {
-	"name": "slp",
-	"version": "0.0.1",
-	"author": "Sitch",
-	"dependencies": {
-		"grunt": "*",
-		"grunt-bower": "*",
-		"grunt-compass": "*",
-		"grunt-contrib": "*",
-		"grunt-contrib-handlebars": "*",
-		"grunt-requirejs": "*"
-	}
+  "name": "slp",
+  "version": "0.0.1",
+  "author": "Sitch",
+  "dependencies": {
+    "grunt": "*",
+    "grunt-bower": "*",
+    "grunt-compass": "*",
+    "grunt-contrib": "*",
+    "grunt-contrib-handlebars": "*",
+    "grunt-requirejs": "*",
+    "assetviz": "~0.2.1"
+  }
 }

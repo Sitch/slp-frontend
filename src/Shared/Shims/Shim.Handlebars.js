@@ -11,11 +11,11 @@ define(['handlebars'], function (Handlebars) {
 				onload();
 			} else {
 				var JST = window.JST || {};
-				var path = 'templates/' + name + '.handlebars'; // TODO: add path into config options
+				var path = 'src/Templates/' + name + '.handlebars'; // TODO: add path into config options
 
 				if (JST[path]) {
 					// Grunt.js pre-compiles templates into JST[]
-					onload(Handlebars.template(JST[template]));
+					onload(JST[path]);
 				} else {
 					// use text.js plugin when loading templates during development
 					parentRequire(['text!templates/' + name + '.handlebars'], function (raw) {
@@ -26,3 +26,5 @@ define(['handlebars'], function (Handlebars) {
 		}
 	};
 });
+
+

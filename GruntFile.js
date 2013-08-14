@@ -46,18 +46,19 @@ module.exports = function (grunt) {
 					mainConfigFile: 'src/App.Bootloader.js',
 					out: 'public/js/build.js',
 
-					optimize: 'uglify2',
-					generateSourceMaps: true,
+					// optimize: 'uglify2',
+					// generateSourceMaps: true,
 					preserveLicenseComments: false,
 					useSourceUrl: true,
 
 					inlineText: false,
+					// inlineText: true,
 					findNestedDependencies: true,
 
 					paths: {
 						handlebars: "../public/components/handlebars/handlebars.runtime"
 						// ,
-						// templates: "public/js/templates"
+						// templates: "../public/js/templates"
 					}
 				}
 			}

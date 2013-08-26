@@ -1,4 +1,4 @@
-define(function (require) {
+ define(function (require) {
 	'use strict';
 
 	var _ = require('underscore');
@@ -28,11 +28,14 @@ define(function (require) {
 	var colorValues = _.values(colors);
 
 	var Rainbow = function () {
-		this.index = 0;
+		this.reset();
 		this.colors = _.clone(colorValues);
 	};
 	Rainbow.prototype = {
 		get: function () {
+			if(this.index == this.colors.length - 1){
+				this.reset();
+			}
 			return this.colors[this.index++];
 		},
 		shuffle: function () {

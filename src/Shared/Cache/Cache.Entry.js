@@ -4,10 +4,11 @@ define(function (require) {
 	var $ = require('jquery');
 	var _ = require('underscore');
 
-	function CacheEntry(name, entry) {
+	function CacheEntry(manager, name, entry) {
 		entry.cacheEntry = this;
 		this.name = name;
 		this.entry = entry;
+		this.manager = manager;
 		this.isValid = true;
 		this.isRefreshing = false;
 		this.service = entry.service;
@@ -20,14 +21,14 @@ define(function (require) {
 		},
 		invalidate: function () {
 			if (this.isValid && !this.isRefreshing) {
-				App.Cache._log(' INVALIDATE ', this.name, this.entry);
+				this.manager._log(' INVALIDATE ', this.name, this.entry);
 				this.isValid = false;
 				this.entry.trigger('cache:invalidated');
 			}
 			return this;
 		},
 		evict: function () {
-			App.Cache._log('  EVICTION  ', this.name, this.entry);
+			this.manager._log('  EVICTION  ', this.name, this.entry);
 			this.isValid = false;
 			this.entry.trigger('cache:evicted');
 			this.entry = null;
@@ -35,7 +36,7 @@ define(function (require) {
 		},
 		refresh: function () {
 			if (!this.isValid && !this.isRefreshing) {
-				App.Cache._log('  RE-FRESH  ', this.name, this.entry);
+				this.manager._log('  RE-FRESH  ', this.name, this.entry);
 
 				this.isRefreshing = true;
 				this.entry.trigger('cache:refresh:begin');

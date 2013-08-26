@@ -1,4 +1,4 @@
-define(function (require) {
+ define(function (require) {
 	'use strict';
 
 	var $ = require('jquery');
@@ -17,6 +17,14 @@ define(function (require) {
 
 	// Section Model manages the state of the subnav section
 	var sectionModel = new Backbone.Model();
+
+
+
+	// var authRoute = function(route){
+	// 	var auth = App.Cache.get('auth');
+
+	// 	return user.isAuthorized() ? route() : App.router.route('Login');
+	// } 
 
 	return Backbone.Marionette.AppRouter.extend({
 		sectionModel: sectionModel,

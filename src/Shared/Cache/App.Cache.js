@@ -4,7 +4,7 @@ define(function (require) {
 	var _ = require('underscore');
 	var ErrorInstance = require('error');
 
-	var QueryParamsTrait = require('./Trait.QueryParams');
+	var BaseTraits = require('./Trait.Base');
 	var CacheEntry = require('./Cache.Entry');
 
 	/*
@@ -48,7 +48,7 @@ define(function (require) {
 			var logCache = cached;
 			if (!cached) {
 				resource = this._requestFromServer(this.constructorMap[name], name, params, success, error);
-				this.cache[hash] = new CacheEntry(name, resource);
+				this.cache[hash] = new CacheEntry(this, name, resource);
 			} else {
 				cacheEntry = this.cache[hash];
 				resource = cacheEntry.entry;
@@ -69,7 +69,7 @@ define(function (require) {
 			var resource = cached ? this.cache[hash] : new this.constructorMap[name]();
 
 			if (!cached) {
-				this.cache[hash] = new CacheEntry(name, resource);
+				this.cache[hash] = new CacheEntry(this, name, resource);
 			}
 			return resource;
 		},
@@ -192,7 +192,7 @@ define(function (require) {
 		 * the params evaluated in a different order
 		 */
 		_generateHash: function (name, params) {
-			return name + '|' + QueryParamsTrait.flattenQueryParams(params || {});
+			return name + '|' + BaseTraits.flattenQueryParams(params || {});
 		},
 		/*
 		 * RequestFromServer

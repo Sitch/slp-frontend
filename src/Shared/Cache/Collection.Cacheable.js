@@ -4,8 +4,9 @@ define(function (require) {
 	var _ = require('underscore');
 	var Backbone = require('backbone');
 
-	var QueryParamsTrait = require('./Trait.QueryParams');
-	var ErrorInstance = require('error');
+	var BaseTrait = require('./Trait.Base');
+	var ForbiddenTrait = require('./Trait.Forbidden');
+	// var ErrorInstance = require('error');
 
 	return Backbone.Collection.extend(_.extend({
 		_toJSON: Backbone.Collection.prototype.toJSON,
@@ -73,7 +74,7 @@ define(function (require) {
 					}
 
 					if (method !== 'read') {
-						App.Cache.invalidateDependencies(method, collection.service);
+						self.entry.manager.invalidateDependencies(method, collection.service);
 					}
 					if (!result) {
 						return result;
@@ -89,5 +90,5 @@ define(function (require) {
 			this.deferred = Backbone.sync.call(collection, method, collection, options);
 			return this.deferred;
 		}
-	}, QueryParamsTrait));
+	}, BaseTrait, ForbiddenTrait));
 });

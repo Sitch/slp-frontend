@@ -22,6 +22,7 @@
     "socket.io-client": "~0.9.16",
     "fancyInput": "~1.2.0",
     "chosen": "~1.0.0",
-    "nvd3": "~1.0.0-beta"
+    "nvd3": "~1.0.0-beta",
+    "backbone-forms": "~0.12.0"
   }
 }

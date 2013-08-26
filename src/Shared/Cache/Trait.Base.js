@@ -10,9 +10,13 @@ define(function(require) {
 			var encodedQuery = this.flattenQueryParams(this.getQueryParams());
 			return App.environment.services[this.getService()] + (encodedQuery ? '/?' + encodedQuery : '');
 		},
-		generateCacheKey: function(service, id) {
-			var timestamp = +new Date();
-			return [service, id, timestamp].join('-');
+		register: function(service, params) {
+			if(!this.hasRegistered) {
+				// _.bindAll(this);
+				this.setService(service);
+				this.setQueryParams(params || {});
+				this.hasRegistered = true;
+			}
 		},
 		getService: function() {
 			return this.service;
@@ -52,26 +56,6 @@ define(function(require) {
 				}
 			}
 			return stack.join('&');
-		},
-		register: function(service, params) {
-			if(!this.hasRegistered) {
-				_.bindAll(this);
-				this.setService(service);
-				this.setQueryParams(params || {});
-				this.hasRegistered = true;
-			}
-		},
-		create: function() {
-			throw new ErrorInstance('InvalidFunctionInvocation', 'Cannot call backbone methods when using cacheable');
-		},
-		fetch: function() {
-			throw new ErrorInstance('InvalidFunctionInvocation', 'Cannot call backbone methods when using cacheable');
-		},
-		save: function() {
-			throw new ErrorInstance('InvalidFunctionInvocation', 'Cannot call backbone methods when using cacheable');
-		},
-		destroy: function() {
-			throw new ErrorInstance('InvalidFunctionInvocation', 'Cannot call backbone methods when using cacheable');
 		}
 	};
 });

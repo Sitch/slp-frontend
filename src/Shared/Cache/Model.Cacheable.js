@@ -3,8 +3,9 @@ define(function (require) {
 
 	var _ = require('underscore');
 	var Backbone = require('backbone');
-	var QueryParamsTrait = require('./Trait.QueryParams');
-	var ErrorInstance = require('error');
+	var BaseTrait = require('./Trait.Base');
+	var ForbiddenTrait = require('./Trait.Forbidden');
+	// var ErrorInstance = require('error');
 
 	return Backbone.Model.extend(_.extend({
 
@@ -12,52 +13,52 @@ define(function (require) {
 
 		// CREATE
 		serverCreate: function (options) {
-			var dataFormat = this.toJSONCreate || this._toJSON;
-			var urlFormat = this.urlCreate || this.url;
+			var format = this.toJSONCreate || this._toJSON;
+			var url = this.urlCreate || this.url;
 
-			return this.crud('create', dataFormat, urlFormat, options);
+			return this.crud('create', format, url, options);
 		},
 		// READ
 		serverRead: function (options) {
-			var dataFormat = this.toJSONRead || this._toJSON;
-			var urlFormat = this.urlRead || this.url;
+			var format = this.toJSONRead || this._toJSON;
+			var url = this.urlRead || this.url;
 
-			return this.crud('read', dataFormat, urlFormat, options);
+			return this.crud('read', format, url, options);
 		},
 		// UPDATE
 		serverUpdate: function (options) {
-			var dataFormat = this.toJSONUpdate || this._toJSON;
-			var urlFormat = this.urlUpdate || this.url;
+			var format = this.toJSONUpdate || this._toJSON;
+			var url = this.urlUpdate || this.url;
 
-			return this.crud('update', dataFormat, urlFormat, options);
+			return this.crud('update', format, url, options);
 		},
 		// DELETE
 		serverDelete: function (options) {
-			var dataFormat = this.toJSONDelete || this._toJSON;
-			var urlFormat = this.urlDelete || this.url;
+			var format = this.toJSONDelete || this._toJSON;
+			var url = this.urlDelete || this.url;
 
-			return this.crud('delete', dataFormat, urlFormat, options);
+			return this.crud('delete', format, url, options);
 		},
 		// CRUD Abstract
-		crud: function (method, dataFormat, urlFormat, options) {
+		crud: function (method, format, url, options) {
 			options = options ? _.clone(options) : {};
 
 			var url = this.url;
 			var toJSON = this.toJSON;
 
 			var model = _.extend(this, {
-				toJSON: dataFormat,
-				url: urlFormat
+				toJSON: format,
+				url: url
 			});
 			var success = options.success;
 			var error = options.error;
 
-			var that = this;
+			var self = this;
 
 			_.extend(options, {
 				success: function (response, status, xhr) {
 
-					_.extend(that, {
+					_.extend(self, {
 						toJSON: toJSON,
 						url: url
 					});
@@ -66,8 +67,8 @@ define(function (require) {
 					if (!model.set(_.isArray(attrs) ? attrs.shift() : attrs, options)) {
 						return false;
 					}
-					if (method !== 'read') {
-						App.Cache.invalidateDependencies(method, model.service);
+					if (method !== 'read') { 
+						self.entry.manager.invalidateDependencies(method, model.service);
 					}
 					if (_.isFunction(success)) {
 
@@ -82,5 +83,5 @@ define(function (require) {
 			this.deferred = Backbone.sync.call(model, method, model, options);
 			return this.deferred;
 		}
-	}, QueryParamsTrait));
+	}, BaseTrait, ForbiddenTrait));
 });

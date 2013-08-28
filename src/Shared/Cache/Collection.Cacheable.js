@@ -74,7 +74,7 @@ define(function (require) {
 					}
 
 					if (method !== 'read') {
-						self.entry.manager.invalidateDependencies(method, collection.service);
+						self.cacheEntry.manager.invalidateDependencies(method, collection.service);
 					}
 					if (!result) {
 						return result;

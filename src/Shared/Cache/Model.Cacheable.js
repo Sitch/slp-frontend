@@ -68,7 +68,7 @@ define(function (require) {
 						return false;
 					}
 					if (method !== 'read') { 
-						self.entry.manager.invalidateDependencies(method, model.service);
+						self.cacheEntry.manager.invalidateDependencies(method, model.service);
 					}
 					if (_.isFunction(success)) {
 

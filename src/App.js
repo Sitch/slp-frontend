@@ -65,8 +65,8 @@ define(function (require) {
 
 		// Prepare Auth since it will be a POST only model
 		var auth = App.Cache.prepare('auth');
-		if(App.env.session){
-			auth.set('id', App.env.session);
+		if(env.session){
+			auth.set('id', env.session);
 		}
 
 		// App.Analytics = new Analytics(env);
@@ -78,8 +78,7 @@ define(function (require) {
 		Backbone.Marionette.View.prototype.cache = App.Cache;
 
 		// Fetch the prerequisite server resources
-
-		if(App.env.session){
+		if(auth.isAuthorized()){
 			// var user = App.Cache.get('user');
 			// var accounts = App.Cache.get('accounts');
 		} else {

@@ -24,6 +24,9 @@ define(function (require) {
 			var session = $.cookie('slp-session');
 			this.set('session', session);
 			App.env.session = session;
+		},
+		isAuthorized: function(){
+			return !!this.get('session');
 		}
 	});
 	return AuthModel;

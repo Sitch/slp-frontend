@@ -7,10 +7,16 @@ define(function (require) {
 	var Marionette = require('marionette');
 	var Template = require('templates');
 
-	var SignupForm = require('./ItemView.SignupForm');
-	var BasicRegistration = require('./ItemView.BasicRegistration');
-	var AdvancedRegistration = require('./ItemView.AdvancedRegistration');
 	var SignupLoading = require('./SignupLoading/ItemView.SignupLoading');
+
+	var BasicRegistration = require('./ItemView.BasicRegistration');
+	var SignupRegistration = require('./ItemView.SignupForm');
+	var AdvancedRegistration = require('./ItemView.AdvancedRegistration');
+
+
+	var StateModel = Backbone.Model.extend({
+		state: 'basic'
+	});
 
 	var SignupLayout = Backbone.Marionette.Layout.extend({
 		template: Template.Signup,
@@ -23,6 +29,23 @@ define(function (require) {
 		initialize: function (options) {
 			this.formData = this.cache.get('formData');
 			this.formSchema = this.cache.get('formSchema');
+
+			this.model = new StateModel();
+			this.on(this.model, 'change:state', this.onStateChange, this);
+		},
+		constructorMap: {
+			'basic': BasicRegistration,
+			'signup': SignupRegistration,
+			'advanced': AdvancedRegistration
+		},
+		onStateChange: function(){
+			var state = this.model.get('state');
+			var Constructor = this.constructorMap[state]
+
+			if(this.constructors.hasOwnProperty(state)){
+				this.section.show(new Constructor());
+			}
+
 		},
 		onShow: function () {
 
@@ -38,7 +61,7 @@ define(function (require) {
 
 			$.when(data, schema).then(function () {
 				self.section1.show(new BasicRegistration());
-				self.section2.show(new SignupForm());
+				self.section2.show(new SignupRegistration());
 				self.section3.show(new AdvancedRegistration());
 			});
 		}

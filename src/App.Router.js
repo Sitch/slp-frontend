@@ -20,11 +20,7 @@
 
 
 
-	// var authRoute = function(route){
-	// 	var auth = App.Cache.get('auth');
-
-	// 	return user.isAuthorized() ? route() : App.router.route('Login');
-	// } 
+	
 
 	return Backbone.Marionette.AppRouter.extend({
 		sectionModel: sectionModel,
@@ -41,6 +37,17 @@
 				App.Router.navigate('Dashboard', {
 					trigger: true
 				});
+			},
+			authRoute: function(route, params){
+				var user = App.Cache.get('auth');
+
+				if(user.isAuthorized()){
+					route.call(this, params);
+				} else {
+					App.Router.navigate('Login', {
+						trigger: true
+					});
+				}
 			},
 			triggerRoute: function (section, options) {
 				var resource = resourceMap[section];

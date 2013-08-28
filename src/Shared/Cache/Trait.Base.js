@@ -6,10 +6,10 @@ define(function(require) {
 	var ErrorInstance = require('error');
 
 	return {
-		url: function() {
-			var encodedQuery = this.flattenQueryParams(this.getQueryParams());
-			return App.environment.services[this.getService()] + (encodedQuery ? '/?' + encodedQuery : '');
-		},
+		// url: function() {
+		// 	var encodedQuery = this.flattenQueryParams(this.getQueryParams());
+		// 	return App.environment.services[this.getService()] + (encodedQuery ? '/?' + encodedQuery : '');
+		// },
 		register: function(service, params) {
 			if(!this.hasRegistered) {
 				// _.bindAll(this);
